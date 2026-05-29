@@ -1,0 +1,158 @@
+﻿// <copyright file="Program.cs" company="Microsoft">
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+// </copyright>
+
+using System;
+using System.Globalization;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Bot.Builder.Integration.AspNet.Core;
+using Microsoft.Bot.Connector.Authentication;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using Microsoft.Graph;
+using Microsoft.Identity.Client;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Adapter;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Clients;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RecallSentNotificationData;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.TeamData;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.AdaptiveCard;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.CommonBot;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.DataQueue;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.DataRecallQueue;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.ExportQueue;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendQueue;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendRecallQueue;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph;
+using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams;
+using Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams;
+using Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend;
+
+// Isolated worker host. Replaces FunctionsStartup-based Startup.cs.
+var host = new HostBuilder()
+    .ConfigureFunctionsWorkerDefaults()
+    .ConfigureAppConfiguration(cfg =>
+    {
+        cfg.AddEnvironmentVariables();
+    })
+    .ConfigureServices((context, services) =>
+    {
+        services.AddOptions<RepositoryOptions>()
+            .Configure<IConfiguration>((opt, cfg) =>
+            {
+                opt.StorageAccountConnectionString = cfg.GetValue<string>("StorageAccountConnectionString");
+                opt.EnsureTableExists = !cfg.GetValue<bool>("IsItExpectedThatTableAlreadyExists", true);
+            });
+
+        services.AddOptions<MessageQueueOptions>()
+            .Configure<IConfiguration>((opt, cfg) =>
+            {
+                opt.ServiceBusConnection = cfg.GetValue<string>("ServiceBusConnection");
+            });
+
+        services.AddOptions<BotOptions>()
+            .Configure<IConfiguration>((opt, cfg) =>
+            {
+                opt.UserAppId = cfg.GetValue<string>("UserAppId");
+                opt.UserAppPassword = cfg.GetValue<string>("UserAppPassword");
+                opt.AuthorAppId = cfg.GetValue<string>("AuthorAppId");
+                opt.AuthorAppPassword = cfg.GetValue<string>("AuthorAppPassword");
+            });
+
+        services.AddOptions<DataQueueMessageOptions>()
+            .Configure<IConfiguration>((opt, cfg) =>
+            {
+                opt.MessageDelayInSeconds = cfg.GetValue<double>("DataQueueMessageDelayInSeconds", 5);
+            });
+
+        services.AddOptions<Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.TeamsConversationOptions>()
+            .Configure<IConfiguration>((opt, cfg) =>
+            {
+                opt.ProactivelyInstallUserApp = cfg.GetValue<bool>("ProactivelyInstallUserApp", true);
+                opt.MaxAttemptsToCreateConversation = cfg.GetValue<int>("MaxAttemptsToCreateConversation", 2);
+            });
+
+        services.AddLocalization();
+
+        var culture = Environment.GetEnvironmentVariable("i18n:DefaultCulture") ?? "en-US";
+        CultureInfo.DefaultThreadCurrentCulture = new CultureInfo(culture);
+        CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo(culture);
+
+        // Bot
+        services.AddSingleton<UserAppCredentials>();
+        services.AddSingleton<AuthorAppCredentials>();
+        services.AddSingleton<ICredentialProvider, ConfigurationCredentialProvider>();
+        services.AddSingleton<ICCBotFrameworkHttpAdapter, CCBotFrameworkHttpAdapter>();
+        services.AddSingleton<BotFrameworkHttpAdapter>();
+
+        // Repositories
+        services.AddSingleton<INotificationDataRepository, NotificationDataRepository>();
+        services.AddSingleton<ISendingNotificationDataRepository, SendingNotificationDataRepository>();
+        services.AddSingleton<ISentNotificationDataRepository, SentNotificationDataRepository>();
+        services.AddSingleton<IUserDataRepository, UserDataRepository>();
+        services.AddSingleton<ITeamDataRepository, TeamDataRepository>();
+        services.AddSingleton<IExportDataRepository, ExportDataRepository>();
+        services.AddSingleton<IAppConfigRepository, AppConfigRepository>();
+        services.AddSingleton<IRecallSentNotificationDataRepository, RecallSentNotificationDataRepository>();
+
+        // Service bus message queues
+        services.AddSingleton<ISendQueue, SendQueue>();
+        services.AddSingleton<IDataQueue, DataQueue>();
+        services.AddSingleton<IExportQueue, ExportQueue>();
+        services.AddSingleton<ISendRecallQueue, SendRecallQueue>();
+        services.AddSingleton<IDataRecallQueue, DataRecallQueue>();
+
+        // Misc
+        services.AddTransient<TableRowKeyGenerator>();
+        services.AddTransient<AdaptiveCardCreator>();
+        services.AddTransient<IAppSettingsService, AppSettingsService>();
+        services.AddTransient<IStorageClientFactory, StorageClientFactory>();
+
+        // Teams
+        services.AddTransient<ITeamMembersService, TeamMembersService>();
+        services.AddTransient<IConversationService, ConversationService>();
+
+        // Graph
+        services.AddOptions<ConfidentialClientApplicationOptions>()
+            .Configure<IConfiguration>((opt, cfg) =>
+            {
+                opt.ClientId = cfg.GetValue<string>("AuthorAppId");
+                opt.ClientSecret = cfg.GetValue<string>("AuthorAppPassword");
+                opt.TenantId = cfg.GetValue<string>("TenantId");
+            });
+        services.AddSingleton<IConfidentialClientApplication>(provider =>
+        {
+            var options = provider.GetRequiredService<IOptions<ConfidentialClientApplicationOptions>>();
+            return ConfidentialClientApplicationBuilder
+                .Create(options.Value.ClientId)
+                .WithClientSecret(options.Value.ClientSecret)
+                .WithAuthority(new Uri($"https://login.microsoftonline.com/{options.Value.TenantId}"))
+                .Build();
+        });
+        services.AddSingleton<IAuthenticationProvider, MsalAuthenticationProvider>();
+        services.AddSingleton<IGraphServiceClient>(sp => new GraphServiceClient(sp.GetRequiredService<IAuthenticationProvider>()));
+        services.AddSingleton<IGraphServiceFactory, GraphServiceFactory>();
+        services.AddScoped<IUsersService>(sp => sp.GetRequiredService<IGraphServiceFactory>().GetUsersService());
+        services.AddScoped<IGroupMembersService>(sp => sp.GetRequiredService<IGraphServiceFactory>().GetGroupMembersService());
+        services.AddScoped<IAppManagerService>(sp => sp.GetRequiredService<IGraphServiceFactory>().GetAppManagerService());
+        services.AddScoped<IChatsService>(sp => sp.GetRequiredService<IGraphServiceFactory>().GetChatsService());
+        services.AddScoped<IGraphServiceFactoryByTenant, GraphServiceFactoryByTenant>();
+
+        services.AddTransient<IDataStreamFacade, DataStreamFacade>();
+
+        // App Insights for isolated worker
+        services.AddApplicationInsightsTelemetryWorkerService();
+        services.ConfigureFunctionsApplicationInsights();
+    })
+    .Build();
+
+host.Run();

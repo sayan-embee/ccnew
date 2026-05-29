@@ -1,0 +1,12 @@
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\bin\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.deps.json
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\bin\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.dll
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\bin\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.pdb
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj.AssemblyReference.cache
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.GeneratedMSBuildEditorConfig.editorconfig
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.AssemblyInfoInputs.cache
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.AssemblyInfo.cs
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj.CoreCompileInputs.cache
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.dll
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\refint\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.dll
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.pdb
+E:\Company\Company Communicator\.net8\Source\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\obj\Debug\net8.0\ref\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.dll

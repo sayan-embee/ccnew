@@ -1,0 +1,627 @@
+[
+  {
+    "name": "CompanyCommunicatorExportFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.ExportFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "company-communicator-export",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      },
+      {
+        "name": "starter",
+        "direction": "In",
+        "type": "durableClient",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "PrepareToSendFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "company-communicator-prep",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      },
+      {
+        "name": "starter",
+        "direction": "In",
+        "type": "durableClient",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "PrepareToSendRecallFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendRecallFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "company-communicator-prep-recall",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      },
+      {
+        "name": "starter",
+        "direction": "In",
+        "type": "durableClient",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "DataAggregationTriggerActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataAggregationTriggerActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "GetRecipientsRecallActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecallRecipientsActivity.GetRecipientsRecallAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "GetPendingRecipientsRecallActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecallRecipientsActivity.GetPendingRecipientsRecallAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "GetRecipientsActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecipientsActivity.GetRecipientsAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "GetPendingRecipientsActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecipientsActivity.GetPendingRecipientsAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "HandleFailureActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleFailureActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "HandleRecallFailureActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleRecallFailureActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "RecallDataAggregationTriggerActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallDataAggregationTriggerActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "RecallSendBatchMessagesActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallSendBatchMessagesActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SendBatchMessagesActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendBatchMessagesActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "StoreMessageActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreMessageActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "StoreRecallMessageActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreRecallMessageActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SyncAllCsvUsersActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllCsvUsersActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SyncAllUsersActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllUsersActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SyncGroupMembersActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncGroupMembersActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SyncTeamMembersActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamMembersActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SyncTeamsActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamsActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "notification",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "TeamsConversationActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationActivity.CreateConversationAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "UpdateNotificationStatusActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateNotificationStatusActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "UpdateRecallNotificationStatusActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateRecallNotificationStatusActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "PrepareToSendOrchestrator",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.PrepareToSendOrchestrator.RunOrchestrator",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "PrepareToSendRecallOrchestrator",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.PrepareToSendRecallOrchestrator.RunOrchestrator",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SendQueueOrchestrator",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendQueueOrchestrator.RunOrchestrator",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SendRecallQueueOrchestrator",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendRecallQueueOrchestrator.RunOrchestrator",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SyncRecipientsOrchestrator",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncRecipientsOrchestrator.RunOrchestrator",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "TeamsConversationOrchestrator",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationOrchestrator.RunOrchestrator",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "ExportOrchestration",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Orchestrator.ExportOrchestration.RunOrchestrator",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "GetMetadataActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.GetMetadataActivity.GetMetadataActivityAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "exportRequiredData",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "HandleExportFailureActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.HandleExportFailureActivity.HandleFailureActivityAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "exportDataEntity",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SendFileCardActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.SendFileCardActivity.SendFileCardActivityAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "sendData",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "UpdateExportDataActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UpdateExportDataActivity.UpdateExportDataActivityAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "exportDataEntity",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "UploadActivity",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UploadActivity.UploadActivityAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "uploadData",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  }
+]

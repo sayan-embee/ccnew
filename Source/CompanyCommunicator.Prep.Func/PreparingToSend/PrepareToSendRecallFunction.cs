@@ -1,0 +1,75 @@
+// <copyright file="PrepareToSendRecallFunction.cs" company="Microsoft">
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+// </copyright>
+
+namespace Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func
+{
+    using System;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.Functions.Worker;
+    using Microsoft.DurableTask;
+    using Microsoft.DurableTask.Client;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.PrepareToRecallQueue;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend;
+    using Newtonsoft.Json;
+
+    /// <summary>
+    /// Azure Function App triggered by messages from a Service Bus queue. <see cref="PrepareToRecallQueue.QueueName"/>
+    ///
+    /// The function processes data from service bus queue and prepares the data to be processed in send, data queue.
+    /// </summary>
+    public class PrepareToSendRecallFunction
+    {
+        private readonly INotificationDataRepository notificationDataRepository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrepareToSendRecallFunction"/> class.
+        /// </summary>
+        /// <param name="notificationDataRepository">Sent Notification data repository.</param>
+        public PrepareToSendRecallFunction(
+            INotificationDataRepository notificationDataRepository)
+        {
+            this.notificationDataRepository = notificationDataRepository ?? throw new ArgumentNullException(nameof(notificationDataRepository));
+        }
+
+        /// <summary>
+        /// Azure Function App triggered by messages from a Service Bus queue.
+        /// It kicks off the durable orchestration for preparing to send notifications.
+        /// </summary>
+        /// <param name="myQueueItem">The Service Bus queue item.</param>
+        /// <param name="starter">Durable orchestration client.</param>
+        /// <param name="log">Logger.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        [Function(FunctionNames.PrepareToSendRecallFunction)]
+        public async Task Run(
+            [ServiceBusTrigger(PrepareToRecallQueue.QueueName, Connection = PrepareToRecallQueue.ServiceBusConnectionConfigurationKey)]
+            string myQueueItem,
+            [DurableClient] DurableTaskClient starter,
+            FunctionContext executionContext)
+        {
+            var log = executionContext.GetLogger(nameof(PrepareToSendRecallFunction));
+            // Get Notification Data
+            var queueMessageContent = JsonConvert.DeserializeObject<PrepareToRecallQueueMessageContent>(myQueueItem);
+            var notificationId = queueMessageContent.NotificationId;
+            var sentNotificationDataEntity = await this.notificationDataRepository.GetAsync(
+                partitionKey: NotificationDataTableNames.RecallSentNotificationsPartition,
+                rowKey: notificationId);
+            if (sentNotificationDataEntity == null)
+            {
+                log.LogError($"Notification entity not found. Notification Id: {notificationId}");
+                return;
+            }
+
+            // Start PrepareToSendRecall Orchestrator function.
+            string instanceId = await starter.ScheduleNewOrchestrationInstanceAsync(
+                FunctionNames.PrepareToSendRecallOrchestrator,
+                sentNotificationDataEntity);
+
+            log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
+        }
+    }
+}

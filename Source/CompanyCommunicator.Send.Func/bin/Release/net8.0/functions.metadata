@@ -1,0 +1,44 @@
+[
+  {
+    "name": "RecallMessageFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "company-communicator-send-recall",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SendMessageFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "company-communicator-send",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Teams.Apps.CompanyCommunicator.Send.Func</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue
+            Used for sending messages from the bot.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction.MaxDeliveryCountForDeadLetter">
+            <summary>
+            This is set to 10 because the default maximum delivery count from the service bus
+            message queue before the service bus will automatically put the message in the Dead Letter
+            Queue is 10.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction.#ctor(Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunctionOptions},Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams.IMessageService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendRecallQueue.ISendRecallQueue,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RepositoryOptions},Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Helpers.CloudStorageHelper,Microsoft.Extensions.Logging.ILogger{Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction.Run(System.String,System.Int32,System.DateTime,System.String)">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue
+            Used for sending messages from the bot.
+            </summary>
+            <param name="myQueueItem">The Service Bus queue item.</param>
+            <param name="deliveryCount">The deliver count.</param>
+            <param name="enqueuedTimeUtc">The enqueued time.</param>
+            <param name="messageId">The message ID.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.RecallMessageFunction.ProcessResponseAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendRecallQueue.SendRecallQueueMessageContent,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams.SendMessageResponse,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Process send notification response.
+            </summary>
+            <param name="messageContent">Message content.</param>
+            <param name="sendMessageResponse">Send notification response.</param>
+            <param name="log">Logger.</param>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue
+            Used for sending messages from the bot.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction.MaxDeliveryCountForDeadLetter">
+            <summary>
+            This is set to 10 because the default maximum delivery count from the service bus
+            message queue before the service bus will automatically put the message in the Dead Letter
+            Queue is 10.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction.#ctor(Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunctionOptions},Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams.IMessageService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.ISendingNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendQueue.ISendQueue,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IUsersService,Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RepositoryOptions},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant,Microsoft.Extensions.Logging.ILogger{Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction.Run(System.String,System.Int32,System.DateTime,System.String)">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue
+            Used for sending messages from the bot.
+            </summary>
+            <param name="myQueueItem">The Service Bus queue item.</param>
+            <param name="deliveryCount">The deliver count.</param>
+            <param name="enqueuedTimeUtc">The enqueued time.</param>
+            <param name="messageId">The message ID.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunction.ProcessResponseAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendQueue.SendQueueMessageContent,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams.SendMessageResponse,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Process send notification response.
+            </summary>
+            <param name="messageContent">Message content.</param>
+            <param name="sendMessageResponse">Send notification response.</param>
+            <param name="log">Logger.</param>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunctionOptions">
+            <summary>
+            Options used to configure the Company Communicator Send Function.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunctionOptions.MaxNumberOfAttempts">
+            <summary>
+            Gets or sets the max number of request attempts.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.SendFunctionOptions.SendRetryDelayNumberOfSeconds">
+            <summary>
+            Gets or sets the number of seconds to delay before
+            retrying to send the message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService">
+            <summary>
+            Notification service interface.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService.IsSendNotificationThrottled">
+            <summary>
+            Checks if the send notification is throttled.
+            </summary>
+            <returns>true if the send notification is throttled, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService.IsPendingNotification(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendQueue.SendQueueMessageContent)">
+            <summary>
+            Checks if the notification is pending.
+            </summary>
+            <param name="message">Send Queue message.</param>
+            <returns>true if the notification is pending, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService.SetSendNotificationThrottled(System.Double)">
+            <summary>
+            Set SendNotification Throttled.
+            </summary>
+            <param name="sendRetryDelayNumberOfSeconds">Send Retry delay.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService.UpdateSentNotification(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Updates sent notification for the recipient.
+            </summary>
+            <param name="notificationId">The notification Id.</param>
+            <param name="recipientId">The recipient's unique identifier.
+                If the recipient is a user, this should be the AAD Id.
+                If the recipient is a team, this should be the team Id.</param>
+            <param name="totalNumberOfSendThrottles">The total number of throttled requests to send the notification.</param>
+            <param name="statusCode">Status code.</param>
+            <param name="allSendStatusCodes">A comma separated list representing all of the status code responses received when trying
+            to send the notification to the recipient.</param>
+            <param name="errorMessage">The error message to store in the database.</param>
+            <param name="activityId">Activity ID.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService.IsPendingRecallNotification(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendRecallQueue.SendRecallQueueMessageContent)">
+            <summary>
+            Check if pending recall notification.
+            </summary>
+            <param name="message">SendRecallQueueMessageContent.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService.IsSendRecallNotificationThrottled">
+            <summary>
+            Check if sent recall notification is throttled or not.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.INotificationService.UpdateSentRecallNotification(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Update sent recall notification.
+            </summary>
+            <param name="notificationId">Notification Id.</param>
+            <param name="recipientId">Recipient Id.</param>
+            <param name="totalNumberOfSendThrottles">Total no. of send throttles.</param>
+            <param name="statusCode">Status code.</param>
+            <param name="allSendStatusCodes">All send status code.</param>
+            <param name="errorMessage">Error message.</param>
+            <param name="activityId">Activity ID.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService">
+            <summary>
+            Notification Service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.IGlobalSendingNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RecallSentNotificationData.IRecallSentNotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService"/> class.
+            </summary>
+            <param name="globalSendingNotificationDataRepository">The global sending notification data repository.</param>
+            <param name="sentNotificationDataRepository">The sent notification data repository.</param>
+            <param name="recallSentNotificationDataRepository">The recall sent notification data repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.IsSendNotificationThrottled">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.IsPendingNotification(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendQueue.SendQueueMessageContent)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.SetSendNotificationThrottled(System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.UpdateSentNotification(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.IsSendRecallNotificationThrottled">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.IsPendingRecallNotification(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendRecallQueue.SendRecallQueueMessageContent)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.Services.NotificationService.UpdateSentRecallNotification(System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.WorkerExtensionStartupCodeExecutor.Configure(Microsoft.Azure.Functions.Worker.IFunctionsWorkerApplicationBuilder)">
+            <summary>
+            Configures the worker to register extension startup services.
+            </summary>
+            <param name="applicationBuilder">The <see cref="T:Microsoft.Azure.Functions.Worker.IFunctionsWorkerApplicationBuilder"/> to configure.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.DirectFunctionExecutor.ExecuteAsync(Microsoft.Azure.Functions.Worker.FunctionContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.FunctionExecutorHostBuilderExtensions">
+            <summary>
+            Extension methods to enable registration of the custom <see cref="T:Microsoft.Azure.Functions.Worker.Invocation.IFunctionExecutor"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.FunctionExecutorHostBuilderExtensions.ConfigureGeneratedFunctionExecutor(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+             Configures an optimized function executor to the invocation pipeline.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.FunctionExecutorAutoStartup">
+            <summary>
+            Auto startup class to register the custom <see cref="T:Microsoft.Azure.Functions.Worker.Invocation.IFunctionExecutor"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.FunctionExecutorAutoStartup.Configure(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+            Configures the <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> to use the custom <see cref="T:Microsoft.Azure.Functions.Worker.Invocation.IFunctionExecutor"/> implementation generated for the current worker.
+            </summary>
+            <param name="hostBuilder">The <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> instance to use for service registration.</param>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.GeneratedFunctionMetadataProvider">
+            <summary>
+            Custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation that returns function metadata definitions for the current worker."/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.GeneratedFunctionMetadataProvider.GetFunctionMetadataAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.WorkerHostBuilderFunctionMetadataProviderExtension">
+            <summary>
+            Extension methods to enable registration of the custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.WorkerHostBuilderFunctionMetadataProviderExtension.ConfigureGeneratedFunctionMetadataProvider(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+             Adds the GeneratedFunctionMetadataProvider to the service collection.
+             During initialization, the worker will return generated function metadata instead of relying on the Azure Functions host for function indexing.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.FunctionMetadataProviderAutoStartup">
+            <summary>
+            Auto startup class to register the custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.FunctionMetadataProviderAutoStartup.Configure(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+            Configures the <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> to use the custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation generated for the current worker.
+            </summary>
+            <param name="hostBuilder">The <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> instance to use for service registration.</param>
+        </member>
+    </members>
+</doc>

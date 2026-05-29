@@ -1,0 +1,10 @@
+{
+  "description": {
+    "language": "dotnet-isolated",
+    "extensions": [ ".dll" ],
+    "defaultExecutablePath": "dotnet",
+    "defaultWorkerPath": "Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.dll",
+    "workerIndexing": "true",
+    "canUsePlaceholder": true
+  }
+}

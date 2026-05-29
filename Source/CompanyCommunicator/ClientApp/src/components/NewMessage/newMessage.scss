@@ -1,0 +1,238 @@
+.taskModule {
+
+    .formContainer {
+        position: absolute;
+        top: 0rem;
+        bottom: 8.4rem;
+        width: 100%;
+
+        .scrollableContent {
+            overflow: auto;
+            height: 100%;
+            min-height: 100%;
+            margin-inline-start: 3.2rem;
+
+            h3 {
+                font-size: 1.6rem;
+                margin: 2rem 0 0 0;
+            }
+
+            h4 {
+                margin: 0.6rem 3.2rem 1rem 3.2rem;
+                font-size: 1.4rem;
+                font-weight: 100;
+            }
+
+            .formContentContainer {
+                margin-inline-end: 3.5rem;
+
+                .inputField {
+
+                    label {
+                        font-size: 1.2rem;
+                        display: block;
+                        margin: 0.8rem 0rem 0.4rem 0rem;
+                    }
+
+                    input {
+                        height: 3.2rem;
+                        padding: 0.6rem 1.2rem;
+                        font-size: 1.4rem;
+                        margin: auto 0;
+                    }
+
+                    i {
+                        bottom: 0.5rem;
+                    }
+                }
+
+                .textArea {
+
+                    span {
+                        font-size: 1.2rem;
+                        display: block;
+                        margin: 0.8rem 0rem 0.4rem 0rem;
+
+                        &:nth-child(2) {
+                            color: #C4314B;
+                        }
+                    }
+
+                    textarea {
+                        height: 9.6rem;
+                        padding: 0.6rem 1.2rem;
+                        font-size: 1.4rem;
+                        margin: auto 0;
+                    }
+
+                    i {
+                        bottom: 2.5rem;
+                    }
+                }
+
+                .hide {
+                    display: none;
+                }
+
+                .show {
+                    display: inline;
+                }
+
+                .radioBtns {
+                    width: 70%;
+
+                    p {
+                        margin: 1.5rem 0rem;
+                    }
+
+                    .ui-dropdown {
+                        margin: 0.6rem 0rem 0.6rem 2.5rem;
+                        width: 30rem;
+                    }
+
+                    .noteText {
+                        margin: 1rem 0rem 1rem 2.5rem;
+                    }
+
+                    .hide {
+                        display: none;
+                    }
+
+                    .hideToggle {
+
+                        .ui-dropdown__toggle-indicator {
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+
+            .adaptiveCardContainer {
+                margin: 0 2rem;
+            }
+        }
+
+        .footerContainer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 2rem 0rem 3.2rem 0rem;
+            width: 100%;
+
+            .buttonContainer {
+                margin-inline-end: 3.2rem;
+
+                #saveBtn {
+                    margin-inline-start: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.ms-Dropdown-container {
+    margin: 0rem 0rem 1rem 0rem;
+
+    .ms-Callout-main {
+        max-height: 30rem !important;
+    }
+}
+
+.is-checked {
+    .ms-Checkbox-label {
+        .ms-Checkbox-checkbox {
+            background: #464775 !important;
+            border: #464775 !important;
+        }
+    }
+}
+
+.mcq-answer-div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 5px;
+
+    .ui-box{
+        width: 100%;
+    }
+}
+
+.dropdown_style li{
+    cursor: pointer;
+}
+
+.dropdown_style span{
+    font-weight: normal !important;
+  }
+
+  .dropdown_style{
+      margin-top: 3px;
+  }
+
+  @media (max-width: 658px){
+    .templateTypeContainer{
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 10px !important;
+        width:100% !important
+    }
+
+    .templateTypeContainerFlex{
+        flex-direction: column !important;
+    }
+  
+    .templateTypeButton{
+      width: 100% !important;
+      align-items: center;
+    }
+  
+    .templateTypeButtonFlex{
+      width: 100% !important;
+    }
+  }
+
+  button.curve-btn{
+    position: absolute;
+      right: -1px;
+      bottom: -1px;
+      border-radius: 32px 0px 7px 0px;
+      width: 41px;
+      padding: 0;
+      min-width: initial;
+      background: #2F80ED;
+      border: none;
+      color: #fff;
+      height: 40px;
+  }
+
+  .ui-card:hover button.curve-btn{
+    background: #F17E21;
+    color: #fff;
+  }
+
+  .imageIcon{
+      height: 80px;
+      width: 100px;
+  }
+
+    .templateTypeContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .selectedTemplateBackgroundColor{
+        border-style: solid !important;
+        border-color: rgb(98, 100, 167) !important;
+        border-width: 2px !important;
+    }
+
+    .flexColumn{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .csvFileUploadDiv{
+        margin-left: 30px;
+    }

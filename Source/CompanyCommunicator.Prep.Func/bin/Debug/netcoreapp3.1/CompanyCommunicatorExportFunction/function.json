@@ -1,0 +1,15 @@
+{
+  "generatedBy": "Microsoft.NET.Sdk.Functions-3.0.11",
+  "configurationSource": "attributes",
+  "bindings": [
+    {
+      "type": "serviceBusTrigger",
+      "connection": "ServiceBusConnection",
+      "queueName": "company-communicator-export",
+      "name": "myQueueItem"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+  "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.ExportFunction.Run"
+}

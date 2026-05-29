@@ -1,0 +1,122 @@
+﻿// <copyright file="CompanyCommunicatorDataRecallFunction.cs" company="Microsoft">
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+// </copyright>
+
+namespace Microsoft.Teams.Apps.CompanyCommunicator.Data.Func
+{
+    using System;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.Functions.Worker;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.Extensions.Options;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Common.Extensions;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.DataRecallQueue;
+    using Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.Services.NotificationDataServices;
+    using Newtonsoft.Json;
+
+    /// <summary>
+    /// Azure Function App triggered by messages from a Service Bus queue
+    /// Used for incrementing results for a sent notification.
+    /// </summary>
+    public class CompanyCommunicatorDataRecallFunction
+    {
+        private static readonly double TenMinutes = 10;
+
+        private readonly INotificationDataRepository notificationDataRepository;
+        private readonly AggregateRecallSentNotificationDataService aggregateRecallSentNotificationDataService;
+        private readonly UpdateRecallNotificationDataService updateRecallNotificationDataService;
+        private readonly IDataRecallQueue dataRecallQueue;
+        private readonly double firstTenMinutesRequeueMessageDelayInSeconds;
+        private readonly double requeueMessageDelayInSeconds;
+        private readonly ILogger<CompanyCommunicatorDataRecallFunction> log;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompanyCommunicatorDataRecallFunction"/> class.
+        /// </summary>
+        public CompanyCommunicatorDataRecallFunction(
+            INotificationDataRepository notificationDataRepository,
+            AggregateRecallSentNotificationDataService aggregateRecallSentNotificationDataService,
+            UpdateRecallNotificationDataService updateRecallNotificationDataService,
+            IDataRecallQueue dataRecallQueue,
+            IOptions<DataQueueMessageOptions> dataQueueMessageOptions,
+            ILogger<CompanyCommunicatorDataRecallFunction> log)
+        {
+            this.notificationDataRepository = notificationDataRepository;
+            this.aggregateRecallSentNotificationDataService = aggregateRecallSentNotificationDataService;
+            this.updateRecallNotificationDataService = updateRecallNotificationDataService;
+            this.dataRecallQueue = dataRecallQueue;
+            this.firstTenMinutesRequeueMessageDelayInSeconds =
+                dataQueueMessageOptions.Value.FirstTenMinutesRequeueMessageDelayInSeconds;
+            this.requeueMessageDelayInSeconds =
+                dataQueueMessageOptions.Value.RequeueMessageDelayInSeconds;
+            this.log = log;
+        }
+
+        /// <summary>
+        /// Azure Function App triggered by messages from a Service Bus queue
+        /// Used for aggregating results for a sent notification.
+        /// </summary>
+        /// <param name="myQueueItem">The Service Bus queue item.</param>
+        /// <param name="deliveryCount">The deliver count.</param>
+        /// <param name="enqueuedTimeUtc">The enqueued time.</param>
+        /// <param name="messageId">The message ID.</param>
+        /// <param name="log">The logger.</param>
+        /// <param name="context">The execution context.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        [Function("CompanyCommunicatorDataRecallFunction")]
+        public async Task Run(
+            [ServiceBusTrigger(
+                DataRecallQueue.QueueName,
+                Connection = DataRecallQueue.ServiceBusConnectionConfigurationKey)]
+            string myQueueItem,
+            int deliveryCount,
+            DateTime enqueuedTimeUtc,
+            string messageId)
+        {
+            var log = this.log;
+            var messageContent = JsonConvert.DeserializeObject<DataRecallQueueMessageContent>(myQueueItem);
+
+            var recallDataEntity = await this.notificationDataRepository.GetAsync(
+                partitionKey: NotificationDataTableNames.RecallSentNotificationsPartition,
+                rowKey: messageContent.NotificationId);
+
+            // If notification is already marked complete, then there is nothing left to do for the data queue trigger.
+            if (!recallDataEntity.IsRecallCompleted())
+            {
+                // Get all of the result counts (Successes, Failures, etc.) from the Sent Notification Data.
+                var aggregatedRecallSentNotificationDataResults = await this.aggregateRecallSentNotificationDataService
+                    .AggregateRecallSentNotificationDataResultsAsync(messageContent.NotificationId, log);
+
+                // Use these counts to update the Notification Data accordingly.
+                var notificationRecallDataEntityUpdate = await this.updateRecallNotificationDataService
+                    .UpdateRecallNotificationDataAsync(
+                        notificationId: messageContent.NotificationId,
+                        shouldForceCompleteNotification: messageContent.ForceMessageComplete,
+                        totalExpectedNotificationCount: recallDataEntity.TotalMessageCount,
+                        aggregatedRecallSentNotificationDataResults: aggregatedRecallSentNotificationDataResults,
+                        log: log);
+
+                // If the notification is still not in a completed state, then requeue the Data Queue trigger
+                // message with a delay in order to aggregate the results again.
+                if (!notificationRecallDataEntityUpdate.IsRecalledCompleted())
+                {
+                    // Requeue data aggregation trigger message with a delay to calculate the totals again.
+                    var dataQueueTriggerMessage = new DataRecallQueueMessageContent
+                    {
+                        NotificationId = messageContent.NotificationId,
+                        ForceMessageComplete = false,
+                    };
+
+                    var dataQueueTriggerMessageDelayInSeconds =
+                        DateTime.UtcNow <= recallDataEntity.SendingStartedDate + TimeSpan.FromMinutes(CompanyCommunicatorDataRecallFunction.TenMinutes)
+                            ? this.firstTenMinutesRequeueMessageDelayInSeconds
+                            : this.requeueMessageDelayInSeconds;
+
+                    await this.dataRecallQueue.SendDelayedAsync(dataQueueTriggerMessage, dataQueueTriggerMessageDelayInSeconds);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xS2BLYj4HkmMnW+gc6Gt+bDiVLmukM97gygIP5liReE=",
+  "Source": "Microsoft.Teams.Apps.CompanyCommunicator",
+  "BasePath": "_content/Microsoft.Teams.Apps.CompanyCommunicator",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

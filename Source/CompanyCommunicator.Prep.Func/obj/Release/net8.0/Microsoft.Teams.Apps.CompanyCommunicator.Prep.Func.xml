@@ -1,0 +1,1417 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.GetMetadataActivity">
+            <summary>
+            Activity to create the metadata.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.GetMetadataActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IUsersService,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.GetMetadataActivity"/> class.
+            </summary>
+            <param name="usersService">the users service.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="graphServiceFactoryByTenant">graphServiceFactoryByTenant.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.GetMetadataActivity.GetMetadataActivityAsync(System.ValueTuple{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData.ExportDataEntity})">
+            <summary>
+            Create and get the metadata.
+            </summary>
+            <param name="exportRequiredData">Tuple containing notification data entity and export data entity.</param>
+            <returns>instance of metadata.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.HandleExportFailureActivity">
+            <summary>
+            This class contains the "clean up" durable activity.
+            If exceptions happen in the "export" operation, this method is called to clean up and send the error message.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.HandleExportFailureActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData.IExportDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Clients.IStorageClientFactory,Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.CommonBot.BotOptions},Microsoft.Teams.Apps.CompanyCommunicator.Common.Adapter.ICCBotFrameworkHttpAdapter,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.IUserDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.HandleExportFailureActivity"/> class.
+            </summary>
+            <param name="exportDataRepository">the export data respository.</param>
+            <param name="storageClientFactory">the storage client factory.</param>
+            <param name="botOptions">the bot options.</param>
+            <param name="botAdapter">the users service.</param>
+            <param name="userDataRepository">the user data repository.</param>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.HandleExportFailureActivity.HandleFailureActivityAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData.ExportDataEntity)">
+            <summary>
+            This method represents the "clean up" durable activity.
+            If exceptions happen in the "export" operation,
+            this method is called to do the clean up work, e.g. delete the files,records and etc.
+            </summary>
+            <param name="exportDataEntity">export data entity.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.SendFileCardActivity">
+            <summary>
+            Sends the file card.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.SendFileCardActivity.#ctor(Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.CommonBot.BotOptions},Microsoft.Teams.Apps.CompanyCommunicator.Common.Adapter.ICCBotFrameworkHttpAdapter,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.IUserDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams.IConversationService,Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.TeamsConversationOptions},Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.SendFileCardActivity"/> class.
+            </summary>
+            <param name="botOptions">the bot options.</param>
+            <param name="botAdapter">the users service.</param>
+            <param name="userDataRepository">the user data repository.</param>
+            <param name="conversationService">The create author conversation service.</param>
+            <param name="options">Teams conversation options.</param>
+            <param name="notificationDataRepository">Notification data entity repository.</param>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.SendFileCardActivity.SendFileCardActivityAsync(System.ValueTuple{System.String,System.String,System.String},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Sends the file card to the user.
+            </summary>
+            <param name="sendData">Tuple containing user id, notification id and filename.</param>
+            <param name="log">Logging service.</param>
+            <returns>file card response id.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UpdateExportDataActivity">
+            <summary>
+            Activity to update export data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UpdateExportDataActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData.IExportDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UpdateExportDataActivity"/> class.
+            </summary>
+            <param name="exportDataRepository">the export data respository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UpdateExportDataActivity.UpdateExportDataActivityAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData.ExportDataEntity)">
+            <summary>
+            Update the export data.
+            </summary>
+            <param name="exportDataEntity">Export data entity.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/>Representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UploadActivity">
+            <summary>
+            Uploads the file to the blob storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UploadActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Clients.IStorageClientFactory,Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.IDataStreamFacade,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UploadActivity"/> class.
+            </summary>
+            <param name="storageClientFactory">the storage client factory.</param>
+            <param name="userDataStream">the user data stream.</param>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Activities.UploadActivity.UploadActivityAsync(System.ValueTuple{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Metadata,System.String})">
+            <summary>
+            Upload the zip file to blob storage.
+            </summary>
+            <param name="uploadData">Tuple containing notification data, metadata and filename.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Extensions.UserExtensions">
+            <summary>
+            Extensions for User Ids.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Extensions.UserExtensions.MaxGroupSize">
+            <summary>
+            this is as per microsoft graph api filter size.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Extensions.UserExtensions.AsGroups(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Break the list in groups.
+            </summary>
+            <param name="userIds">the user ids.</param>
+            <returns>group list of user id list.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.MetadataMap">
+            <summary>
+            Mapper class for MetaData.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.MetadataMap.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.MetadataMap"/> class.
+            </summary>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.TeamDataMap">
+            <summary>
+            Mapper class for TeamData.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.TeamDataMap.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.TeamDataMap"/> class.
+            </summary>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.UserDataMap">
+            <summary>
+            Mapper class for UserData.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.UserDataMap.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Mappers.UserDataMap"/> class.
+            </summary>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Error">
+            <summary>
+            Error model class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Error.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Error.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportDataRequirement">
+            <summary>
+            Export data requirement model class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportDataRequirement.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData.ExportDataEntity,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportDataRequirement"/> class.
+            </summary>
+            <param name="notificationDataEntity">the notification data entity.</param>
+            <param name="exportDataEntity">the esport data entity.</param>
+            <param name="userId">user id.</param>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportDataRequirement.UserId">
+            <summary>
+            Gets the user id.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportDataRequirement.NotificationDataEntity">
+            <summary>
+            Gets the notification data entity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportDataRequirement.ExportDataEntity">
+            <summary>
+            Gets the export data entity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportDataRequirement.IsValid">
+            <summary>
+            Check if requirement is met.
+            </summary>
+            <returns>value to determine if reuirement is met.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportMessageQueueContent">
+            <summary>
+            Azure service bus export queue message content class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportMessageQueueContent.NotificationId">
+            <summary>
+            Gets or sets the notification id value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.ExportMessageQueueContent.UserId">
+            <summary>
+            Gets or sets the user id value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Metadata">
+            <summary>
+            Metadata model class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Metadata.MessageTitle">
+            <summary>
+            Gets or sets the message title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Metadata.SentTimeStamp">
+            <summary>
+            Gets or sets the sent timestamp.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Metadata.ExportTimeStamp">
+            <summary>
+            Gets or sets the export timestamp.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.Metadata.ExportedBy">
+            <summary>
+            Gets or sets the exported by user id.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.RootErrorMessage">
+            <summary>
+            Root error message model class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.RootErrorMessage.Error">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.TeamData">
+            <summary>
+            the model class for team data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.TeamData.Id">
+            <summary>
+            Gets or sets the team id value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.TeamData.Name">
+            <summary>
+            Gets or sets the team id value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.TeamData.DeliveryStatus">
+            <summary>
+            Gets or sets the delivery status value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.TeamData.StatusReason">
+            <summary>
+            Gets or sets the status reason value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.UserData">
+            <summary>
+            the model class for user data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.UserData.Id">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.UserData.Upn">
+            <summary>
+            Gets or sets the user principal name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.UserData.Name">
+            <summary>
+            Gets or sets the display name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.UserData.DeliveryStatus">
+            <summary>
+            Gets or sets the delivery status value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Model.UserData.StatusReason">
+            <summary>
+            Gets or sets the status reason value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Orchestrator.ExportOrchestration">
+            <summary>
+            This class is the durable framework orchestration for exporting notifications.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Orchestrator.ExportOrchestration.RunOrchestrator(Microsoft.DurableTask.TaskOrchestrationContext)">
+            <summary>
+            This is the durable orchestration method,
+            which starts the export process.
+            </summary>
+            <param name="context">Durable orchestration context.</param>
+            <param name="log">Logging service.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.DataStreamFacade">
+            <summary>
+            Facade to get the data stream.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.DataStreamFacade.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.TeamData.ITeamDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IUsersService,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.DataStreamFacade"/> class.
+            </summary>
+            <param name="sentNotificationDataRepository">the sent notification data repository.</param>
+            <param name="teamDataRepository">the team data repository.</param>
+            <param name="usersService">the users service.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="graphServiceFactoryByTenant">graphServiceFactoryByTenant.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.DataStreamFacade.GetUserDataStreamAsync(System.String,System.String)">
+            <summary>
+            get the users data streams.
+            </summary>
+            <param name="notificationId">the notification id.</param>
+            <param name="tenantId">tenant id.</param>
+            <returns>the streams of user data.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.DataStreamFacade.GetTeamDataStreamAsync(System.String)">
+            <summary>
+            get the team data streams.
+            </summary>
+            <param name="notificationId">the notification id.</param>
+            <returns>the streams of team data.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.DataStreamFacade.CreateUserData(System.Collections.Generic.IEnumerable{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity},System.Collections.Generic.IEnumerable{Microsoft.Graph.User})">
+            <summary>
+            Create user data.
+            </summary>
+            <param name="sentNotificationDataEntities">the list of sent notification data entities.</param>
+            <param name="users">the user list.</param>
+            <returns>list of created user data.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.DataStreamFacade.GetStatusReason(System.String,System.String)">
+            <summary>
+            adds the status code to error message.
+            </summary>
+            <param name="errorMessage">the error message.</param>
+            <param name="statusCode">the status code.</param>
+            <returns>status code appended error message.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.IDataStreamFacade">
+            <summary>
+            Facade to get the data stream.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.IDataStreamFacade.GetUserDataStreamAsync(System.String,System.String)">
+            <summary>
+            get the users data streams.
+            </summary>
+            <param name="notificationId">the notification id.</param>
+            <param name="tenantId">tenant id.</param>
+            <returns>the streams of user data.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.Export.Streams.IDataStreamFacade.GetTeamDataStreamAsync(System.String)">
+            <summary>
+            get the team data streams.
+            </summary>
+            <param name="notificationId">the notification id.</param>
+            <returns>the streams of team data.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.ExportFunction">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue.
+            This function exports notification in a zip file for the admin.
+            It prepares the file by reading the notification data, user graph api.
+            This function stage the file in Blob Storage and send the
+            file card to the admin using bot framework adapter.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.ExportFunction.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.ExportData.IExportDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.ExportFunction"/> class.
+            </summary>
+            <param name="notificationDataRepository">Notification data repository.</param>
+            <param name="exportDataRepository">Export data repository.</param>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.ExportFunction.Run(System.String,Microsoft.DurableTask.Client.DurableTaskClient,Microsoft.Azure.Functions.Worker.FunctionContext)">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue.
+            It kicks off the durable orchestration for exporting notifications.
+            </summary>
+            <param name="myQueueItem">The Service Bus queue item.</param>
+            <param name="starter">Durable orchestration client.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataAggregationTriggerActivity">
+             <summary>
+             Data aggregation trigger activity.
+            
+             Does following:
+             1. Updates notification (total recipient count).
+             2. Sends message to data queue.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataAggregationTriggerActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.DataQueue.IDataQueue,Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataQueueMessageOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataAggregationTriggerActivity"/> class.
+            </summary>
+            <param name="notificationDataRepository">Notification data repository.</param>
+            <param name="dataQueue">The data queue.</param>
+            <param name="options">The data queue message options.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataAggregationTriggerActivity.RunAsync(System.ValueTuple{System.String,System.Int32},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Does following:
+            1. Updates notification (total recipient count).
+            2. Sends message to data queue.
+            </summary>
+            <param name="input">Input.</param>
+            <param name="log">logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataAggregationTriggerActivity.UpdateNotification(System.String,System.Int32,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Update notification data (total recipient count).
+            </summary>
+            <param name="notificationId">Notification id.</param>
+            <param name="recipientCount">Recipient count.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataAggregationTriggerActivity.SendMessageToDataQueue(System.String)">
+            <summary>
+            Sends message to data queue to trigger Data function.
+            </summary>
+            <param name="notificationId">Notification id.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecallRecipientsActivity">
+            <summary>
+            Reads all the recipients from recall notification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecallRecipientsActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RecallSentNotificationData.IRecallSentNotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecallRecipientsActivity"/> class.
+            </summary>
+            <param name="recallSentNotificationDataRepository">The recall sent notification data repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecallRecipientsActivity.GetRecipientsRecallAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity)">
+            <summary>
+            Reads all the recipients from Sent notification table.
+            </summary>
+            <param name="notification">notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecallRecipientsActivity.GetPendingRecipientsRecallAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity)">
+            <summary>
+            Reads all the recipients from Sent notification table who do not have conversation details.
+            </summary>
+            <param name="notification">notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecipientsActivity">
+            <summary>
+            Reads all the recipients from Sent notification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecipientsActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecipientsActivity"/> class.
+            </summary>
+            <param name="sentNotificationDataRepository">The sent notification data repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecipientsActivity.GetRecipientsAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity)">
+            <summary>
+            Reads all the recipients from Sent notification table.
+            </summary>
+            <param name="notification">notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.GetRecipientsActivity.GetPendingRecipientsAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity)">
+            <summary>
+            Reads all the recipients from Sent notification table who do not have conversation details.
+            </summary>
+            <param name="notification">notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleFailureActivity">
+            <summary>
+            This class contains the "clean up" durable activity.
+            If exceptions happen in the "prepare to send" operation, this method is called to log the exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleFailureActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleFailureActivity"/> class.
+            </summary>
+            <param name="notificationDataRepository">Notification data repository.</param>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleFailureActivity.RunAsync(System.ValueTuple{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,System.Exception})">
+            <summary>
+            This method represents the "clean up" durable activity.
+            If exceptions happen in the "prepare to send" operation,
+            this method is called to do the clean up work, e.g. log the exception and etc.
+            </summary>
+            <param name="input">Input value.</param>
+            <returns>A task that represents the work queued to execute.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleRecallFailureActivity">
+            <summary>
+            This class contains the "clean up" durable activity.
+            If exceptions happen in the "prepare to send" operation, this method is called to log the exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleRecallFailureActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleRecallFailureActivity"/> class.
+            </summary>
+            <param name="notificationDataRepository">Notification data repository.</param>
+            <param name="localizer">Localization service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.HandleRecallFailureActivity.RunAsync(System.ValueTuple{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,System.Exception})">
+            <summary>
+            This method represents the "clean up" durable activity.
+            If exceptions happen in the "prepare to send" operation,
+            this method is called to do the clean up work, e.g. log the exception and etc.
+            </summary>
+            <param name="input">Input value.</param>
+            <returns>A task that represents the work queued to execute.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallDataAggregationTriggerActivity">
+             <summary>
+             Data aggregation trigger activity.
+            
+             Does following:
+             1. Updates notification (total recipient count).
+             2. Sends message to data queue.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallDataAggregationTriggerActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.DataRecallQueue.IDataRecallQueue,Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataQueueMessageOptions})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallDataAggregationTriggerActivity"/> class.
+            </summary>
+            <param name="notificationDataRepository">Notification data repository.</param>
+            <param name="dataRecallQueue">The data queue.</param>
+            <param name="options">The data queue message options.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallDataAggregationTriggerActivity.RunAsync(System.ValueTuple{System.String,System.Int32},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Does following:
+            1. Updates notification (total recipient count).
+            2. Sends message to data queue.
+            </summary>
+            <param name="input">Input.</param>
+            <param name="log">logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallDataAggregationTriggerActivity.UpdateNotification(System.String,System.Int32,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Update notification data (total recipient count).
+            </summary>
+            <param name="notificationId">Notification id.</param>
+            <param name="recipientCount">Recipient count.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallDataAggregationTriggerActivity.SendMessageToDataQueue(System.String)">
+            <summary>
+            Sends message to data queue to trigger Data function.
+            </summary>
+            <param name="notificationId">Notification id.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallSendBatchMessagesActivity">
+            <summary>
+            Recall Sends batch messages to Send Queue.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallSendBatchMessagesActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendRecallQueue.ISendRecallQueue)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallSendBatchMessagesActivity"/> class.
+            </summary>
+            <param name="sendRecallQueue">Send queue service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.RecallSendBatchMessagesActivity.RunAsync(System.ValueTuple{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,System.Collections.Generic.List{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RecallSentNotificationData.RecallSentNotificationDataEntity}})">
+            <summary>
+            Sends batch messages to Send Queue.
+            </summary>
+            <param name="input">Input.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendBatchMessagesActivity">
+            <summary>
+            Sends batch messages to Send Queue.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendBatchMessagesActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.SendQueue.ISendQueue)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendBatchMessagesActivity"/> class.
+            </summary>
+            <param name="sendQueue">Send queue service.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendBatchMessagesActivity.RunAsync(System.ValueTuple{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,System.Collections.Generic.List{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity}})">
+            <summary>
+            Sends batch messages to Send Queue.
+            </summary>
+            <param name="input">Input.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendBatchMessagesActivity.ConvertToRecipientData(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity)">
+            <summary>
+            Converts sent notification data entity to Recipient data.
+            </summary>
+            <returns>Recipient data.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreMessageActivity">
+            <summary>
+            Stores the message in sending notification data table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreMessageActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.ISendingNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.AdaptiveCard.AdaptiveCardCreator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreMessageActivity"/> class.
+            </summary>
+            <param name="notificationRepo">Sending notification data repository.</param>
+            <param name="cardCreator">The adaptive card creator.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreMessageActivity.RunAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity)">
+            <summary>
+            Stores the message in sending notification data table.
+            </summary>
+            <param name="notification">A notification to be sent to recipients.</param>
+            <returns>A task that represents the work queued to execute.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreRecallMessageActivity">
+            <summary>
+            Stores the message in sending notification data table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreRecallMessageActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RecallSentNotificationData.IRecallSentNotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreRecallMessageActivity"/> class.
+            </summary>
+            <param name="sentNotificationDataRepository">Sending notification data repository.</param>
+            <param name="recallSentNotificationDataRepository">recallSentNotificationDataRepository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.StoreRecallMessageActivity.RunAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity)">
+            <summary>
+            Stores the message in sending notification data table.
+            </summary>
+            <param name="notification">A notification to be sent to recipients.</param>
+            <returns>A task that represents the work queued to execute.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllCsvUsersActivity">
+            <summary>
+            Syncs all users to Sent notification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllCsvUsersActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.IUserDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IUsersService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllCsvUsersActivity"/> class.
+            </summary>
+            <param name="userDataRepository">User Data repository.</param>
+            <param name="sentNotificationDataRepository">Sent notification data repository.</param>
+            <param name="usersService">Users service.</param>
+            <param name="notificationDataRepository">Notification data entity repository.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="graphServiceFactoryByTenant">graphServiceFactoryByTenant.</param>
+            <param name="log">The logger factory.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllCsvUsersActivity.RunAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Syncs all users to Sent notification table.
+            </summary>
+            <param name="notification">Notification.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllCsvUsersActivity.SyncAllCsvUsers(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Syncs delta changes only.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllCsvUsersActivity.GetUserEmailsFromCsv(System.String)">
+            <summary>
+            Read the csv file from url.
+            </summary>
+            <param name="url">CSV file url.</param>
+            <returns>List of users.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllUsersActivity">
+            <summary>
+            Syncs all users to Sent notification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllUsersActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.IUserDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IUsersService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllUsersActivity"/> class.
+            </summary>
+            <param name="userDataRepository">User Data repository.</param>
+            <param name="sentNotificationDataRepository">Sent notification data repository.</param>
+            <param name="usersService">Users service.</param>
+            <param name="notificationDataRepository">Notification data entity repository.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="graphServiceFactoryByTenant">graphServiceFactoryByTenant.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllUsersActivity.RunAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Syncs all users to Sent notification table.
+            </summary>
+            <param name="notification">Notification.</param>
+            <param name="log">Logging service.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllUsersActivity.SyncAllUsers(System.String,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Syncs delta changes only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncGroupMembersActivity">
+            <summary>
+            Syncs group members to Sent notification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncGroupMembersActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGroupMembersService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.IUserDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncGroupMembersActivity"/> class.
+            </summary>
+            <param name="sentNotificationDataRepository">Sent notification data repository.</param>
+            <param name="notificationDataRepository">Notifications data repository.</param>
+            <param name="groupMembersService">Group members service.</param>
+            <param name="userDataRepository">User Data repository.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="graphServiceFactoryByTenant">graphServiceFactoryByTenant.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncGroupMembersActivity.RunAsync(System.ValueTuple{System.String,System.String,System.String},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Syncs group members to Sent notification table.
+            </summary>
+            <param name="input">Input.</param>
+            <param name="log">Logging service.</param>
+            <returns>It returns the group transitive members first page and next page url.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncGroupMembersActivity.GetRecipientsAsync(System.String,System.Collections.Generic.IEnumerable{Microsoft.Graph.User},System.String)">
+            <summary>
+            Reads corresponding user entity from User table and creates a recipient for every user.
+            </summary>
+            <param name="notificationId">Notification Id.</param>
+            <param name="users">Users.</param>
+            <param name="tenantId">Tenant Id.</param>
+            <returns>List of recipients.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamMembersActivity">
+            <summary>
+            Syncs Team members to SentNotification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamMembersActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.TeamData.ITeamDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams.ITeamMembersService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.IUserDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamMembersActivity"/> class.
+            </summary>
+            <param name="teamDataRepository">Team Data repository.</param>
+            <param name="memberService">Teams member service.</param>
+            <param name="notificationDataRepository">Notification data repository.</param>
+            <param name="sentNotificationDataRepository">Sent notification data repository.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="userDataRepository">User Data repository.</param>
+            <param name="graphServiceFactoryByTenant">graphServiceFactoryByTenant.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamMembersActivity.RunAsync(System.ValueTuple{System.String,System.String},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Syncs Team members to SentNotification table.
+            </summary>
+            <param name="input">Input data.</param>
+            <param name="log">Logging service.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamMembersActivity.GetRecipientsAsync(System.String,System.Collections.Generic.IEnumerable{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.UserDataEntity})">
+            <summary>
+            Reads corresponding user entity from User table and creates a recipient for every user.
+            </summary>
+            <param name="notificationId">Notification Id.</param>
+            <param name="users">Users.</param>
+            <returns>List of recipients.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamsActivity">
+            <summary>
+            Sync teams data to Sent notification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamsActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.TeamData.ITeamDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamsActivity"/> class.
+            </summary>
+            <param name="teamDataRepository">Team Data repository.</param>
+            <param name="sentNotificationDataRepository">Sent notification data repository.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="notificationDataRepository">Notification data entity repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamsActivity.RunAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationDataEntity,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Sync teams data to Sent notification table.
+            </summary>
+            <param name="notification">Notification.</param>
+            <param name="log">Logging service.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamsActivity.GetTeamDataEntities(System.String,System.Collections.Generic.IEnumerable{System.String},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Reads team data entity for every teamId from Storage.
+            </summary>
+            <param name="notificationId">Notification Id.</param>
+            <param name="teamIds">Team Ids.</param>
+            <param name="log">Logger.</param>
+            <returns>Team Data Entities.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncTeamsActivity.ConvertToRecipient(System.String,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.TeamData.TeamDataEntity)">
+            <summary>
+            Creates recipient from TeamDataEntity.
+            </summary>
+            <param name="notificationId">Notification Id.</param>
+            <param name="team">Team entity.</param>
+            <returns><see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity"/> object.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationActivity">
+            <summary>
+            Teams conversation activity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.Teams.IConversationService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.ISentNotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.IUserDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IAppManagerService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IChatsService,Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.IAppSettingsService,Microsoft.Extensions.Options.IOptions{Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.TeamsConversationOptions},Microsoft.Extensions.Localization.IStringLocalizer{Microsoft.Teams.Apps.CompanyCommunicator.Common.Resources.Strings},Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MicrosoftGraph.IGraphServiceFactoryByTenant)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationActivity"/> class.
+            </summary>
+            <param name="conversationService">The create user conversation service.</param>
+            <param name="sentNotificationDataRepository">The sent notification data repository.</param>
+            <param name="userDataRepository">The user data repository.</param>
+            <param name="notificationDataRepository">Notification data entity repository.</param>
+            <param name="appManagerService">App manager service.</param>
+            <param name="chatsService">Chats service.</param>
+            <param name="appSettingsService">App Settings service.</param>
+            <param name="options">Teams conversation options.</param>
+            <param name="localizer">Localization service.</param>
+            <param name="graphServiceFactoryByTenant">graphServiceFactoryByTenant.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationActivity.CreateConversationAsync(System.ValueTuple{System.String,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity},Microsoft.Extensions.Logging.ILogger)">
+             <summary>
+             Creates conversation with a pending recipient.
+            
+             For teams users - it creates a conversation using bot adapter.
+             For other users - it installs User application and gets conversation id.
+             </summary>
+             <param name="input">Input.</param>
+             <param name="log">Logger.</param>
+             <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationActivity.UpdateUserEntityAsync(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity)">
+            <summary>
+            Updates user entity table.
+            </summary>
+            <param name="recipient">Recipient.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateNotificationStatusActivity">
+            <summary>
+            Update notification status activity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateNotificationStatusActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateNotificationStatusActivity"/> class.
+            </summary>
+            <param name="notificationRepository">Notification data repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateNotificationStatusActivity.RunAsync(System.ValueTuple{System.String,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationStatus})">
+            <summary>
+            Updates notification status.
+            </summary>
+            <param name="input">Input.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateRecallNotificationStatusActivity">
+            <summary>
+            Update notification status activity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateRecallNotificationStatusActivity.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateRecallNotificationStatusActivity"/> class.
+            </summary>
+            <param name="notificationRepository">Notification data repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.UpdateRecallNotificationStatusActivity.RunAsync(System.ValueTuple{System.String,Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.NotificationStatus})">
+            <summary>
+            Updates notification status.
+            </summary>
+            <param name="input">Input.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataQueueMessageOptions">
+            <summary>
+            Options for data queue messages.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.DataQueueMessageOptions.MessageDelayInSeconds">
+            <summary>
+            Gets or sets the value for the delay to be applied to the data queue message.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.Extensions.SentNotificationDataEntityExtensions">
+            <summary>
+            Extension methods for the SentNotificationDataEntity class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.Extensions.SentNotificationDataEntityExtensions.CreateInitialRecallSentNotificationDataEntity(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity,System.String)">
+            <summary>
+            Creates a SentNotificationDataEntity in an initialized state from the given UserDataEntity
+            and partition key.
+            Makes sure to set the correct recipient type for having been created from a UserDataEntity.
+            </summary>
+            <param name="sentNotificationDataEntity">The user data entity.</param>
+            <param name="partitionKey">The partition key.</param>
+            <returns>The sent notification data entity.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.Extensions.UserDataEntityExtensions">
+            <summary>
+            Extension methods for the UserDataEntity class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.Extensions.UserDataEntityExtensions.CreateInitialSentNotificationDataEntity(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.UserData.UserDataEntity,System.String)">
+            <summary>
+            Creates a SentNotificationDataEntity in an initialized state from the given UserDataEntity
+            and partition key.
+            Makes sure to set the correct recipient type for having been created from a UserDataEntity.
+            </summary>
+            <param name="userDataEntity">The user data entity.</param>
+            <param name="partitionKey">The partition key.</param>
+            <returns>The sent notification data entity.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames">
+            <summary>
+            Defines constants for function names.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.PrepareToSendFunction">
+            <summary>
+            Prepare to send function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.PrepareToSendOrchestrator">
+            <summary>
+            Prepare to send orchestrator function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SyncRecipientsOrchestrator">
+            <summary>
+            Sync recipients orchestrator function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.TeamsConversationOrchestrator">
+            <summary>
+            Teams conversation orchestrator.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SendQueueOrchestrator">
+            <summary>
+            Send queue orchestrator function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.StoreMessageActivity">
+            <summary>
+            Process and store message activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SyncAllUsersActivity">
+            <summary>
+            Sync all users activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SyncAllCsvUsersActivity">
+            <summary>
+            Sync all csv users activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SyncTeamMembersActivity">
+            <summary>
+            Sync Team members acitivity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SyncGroupMembersActivity">
+            <summary>
+            Sync group members acitivity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SyncTeamsActivity">
+            <summary>
+            Sync Teams acitivity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.GetRecipientsActivity">
+            <summary>
+            Get recipients acitvity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.GetPendingRecipientsActivity">
+            <summary>
+            Get pending recipients (ie recipients with no conversation id in the database) acitvity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.TeamsConversationActivity">
+            <summary>
+            Teams conversation activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.DataAggregationTriggerActivity">
+            <summary>
+            Data aggregation activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.UpdateNotificationStatusActivity">
+            <summary>
+            Update notification activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SendBatchMessagesActivity">
+            <summary>
+            Send batch messages to send queue activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.HandleFailureActivity">
+            <summary>
+            Handle failure activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.UploadActivity">
+            <summary>
+            Upload activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SendFileCardActivity">
+            <summary>
+            Send file card activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.GetMetadataActivity">
+            <summary>
+            Get metadata activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.UpdateExportDataActivity">
+            <summary>
+            Update export data activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.HandleExportFailureActivity">
+            <summary>
+            Handle export failure activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.ExportOrchestration">
+            <summary>
+            Export orechestration function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.PrepareToSendRecallFunction">
+            <summary>
+            Prepare to send recall function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.PrepareToSendRecallOrchestrator">
+            <summary>
+            Prepare to send recall orchestrator function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.SendRecallQueueOrchestrator">
+            <summary>
+            Send recall queue orchestrator function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.UpdateRecallNotificationStatusActivity">
+            <summary>
+            Update recall notification activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.GetRecipientsRecallActivity">
+            <summary>
+            Get recipients recall acitvity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.GetPendingRecipientsRecallActivity">
+            <summary>
+            Get pending recipients recall (ie recipients with no conversation id in the database) acitvity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.RecallDataAggregationTriggerActivity">
+            <summary>
+            Recall Data aggregation activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.RecallSendBatchMessagesActivity">
+            <summary>
+            Recall Send batch messages to send queue activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.HandleRecallFailureActivity">
+            <summary>
+            Handle recall failure activity function.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionNames.StoreRecallMessageActivity">
+            <summary>
+            Process and store recall message activity function.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionSettings">
+            <summary>
+            Function settings.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.FunctionSettings.DefaultRetryOptions">
+            <summary>
+            A default setting for the retry options for starting an activity / sub-orchestrator.
+            Equivalent to the legacy WebJobs RetryOptions(firstRetryInterval=5s, maxNumberOfAttempts=3).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.PrepareToSendOrchestrator">
+             <summary>
+             Prepare to Send orchestrator.
+            
+             This function prepares to send a notification to the target audience.
+            
+             Performs following:
+             1. Stores the message in sending notification table.
+             2. Syncs recipients information to sent notification table.
+             3. Creates teams conversation with recipients if required.
+             4. Starts Send Queue orchestration.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.PrepareToSendOrchestrator.RunOrchestrator(Microsoft.DurableTask.TaskOrchestrationContext)">
+            <summary>
+            This is the durable orchestration method,
+            which kicks off the preparing to send process.
+            </summary>
+            <param name="context">Durable orchestration context.</param>
+            <param name="log">Logger.</param>
+            <returns>A task that represents the work queued to execute.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.PrepareToSendRecallOrchestrator">
+             <summary>
+             Prepare to Send orchestrator.
+            
+             This function prepares to send a notification to the target audience.
+            
+             Performs following:
+             1. Stores the message in sending notification table.
+             2. Syncs recipients information to sent notification table.
+             3. Creates teams conversation with recipients if required.
+             4. Starts Send Queue orchestration.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.PrepareToSendRecallOrchestrator.RunOrchestrator(Microsoft.DurableTask.TaskOrchestrationContext)">
+            <summary>
+            This is the durable orchestration method,
+            which kicks off the preparing to send process.
+            </summary>
+            <param name="context">Durable orchestration context.</param>
+            <param name="log">Logger.</param>
+            <returns>A task that represents the work queued to execute.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendQueueOrchestrator">
+             <summary>
+             Send Queue orchestrator.
+            
+             Does following:
+             1. Reads all the recipients from Sent notification tables.
+             2. Starts data aggregation.
+             3. Sends messages to Send Queue in batches.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendQueueOrchestrator.RunOrchestrator(Microsoft.DurableTask.TaskOrchestrationContext)">
+            <summary>
+            SendQueueOrchestrator function.
+            Does following:
+            1. Reads all the recipients from Sent notification tables.
+            2. Starts data aggregation.
+            3. Sends messages to Send Queue in batches.
+            </summary>
+            <param name="context">Durable orchestration context.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendQueueOrchestrator.SeparateIntoBatches(System.Collections.Generic.List{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.SentNotificationData.SentNotificationDataEntity})">
+            <summary>
+            Separate a list of recipients into batches (a list of lists).
+            The size of the batch is determined by the maximum allowed size of a batch
+            request to the Send queue service bus queue.
+            </summary>
+            <param name="sourceList">The list to break into batches.</param>
+            <returns>The batches (a list of lists).</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendRecallQueueOrchestrator">
+             <summary>
+             Send Queue orchestrator.
+            
+             Does following:
+             1. Reads all the recipients from Sent notification tables.
+             2. Starts data aggregation.
+             3. Sends messages to Send Queue in batches.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendRecallQueueOrchestrator.RunOrchestrator(Microsoft.DurableTask.TaskOrchestrationContext)">
+            <summary>
+            SendQueueOrchestrator function.
+            Does following:
+            1. Reads all the recipients from Sent notification tables.
+            2. Starts data aggregation.
+            3. Sends messages to Send Queue in batches.
+            </summary>
+            <param name="context">Durable orchestration context.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SendRecallQueueOrchestrator.SeparateIntoBatches(System.Collections.Generic.List{Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.RecallSentNotificationData.RecallSentNotificationDataEntity})">
+            <summary>
+            Separate a list of recipients into batches (a list of lists).
+            The size of the batch is determined by the maximum allowed size of a batch
+            request to the Send queue service bus queue.
+            </summary>
+            <param name="sourceList">The list to break into batches.</param>
+            <returns>The batches (a list of lists).</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncRecipientsOrchestrator">
+            <summary>
+            Syncs target set of recipients to Sent notification table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncRecipientsOrchestrator.RunOrchestrator(Microsoft.DurableTask.TaskOrchestrationContext)">
+            <summary>
+            Fetch recipients and store them in Azure storage.
+            </summary>
+            <param name="context">Durable orchestration context.</param>
+            <param name="log">Logging service.</param>
+            <returns><see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationOrchestrator">
+            <summary>
+            Teams conversation orchestrator.
+            Does following:
+            1. Gets all the recipients for whom we do not have conversation Id.
+            2. Creates conversation with each recipient.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.TeamsConversationOrchestrator.RunOrchestrator(Microsoft.DurableTask.TaskOrchestrationContext)">
+            <summary>
+            TeamsConversationOrchestrator function.
+            Does following:
+            1. Gets all the pending recipients(for whom we do not have conversation Id).
+            2. Creates conversation with each recipient.
+            </summary>
+            <param name="context">Durable orchestration context.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendFunction">
+             <summary>
+             Azure Function App triggered by messages from a Service Bus queue. <see cref="F:Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.PrepareToSendQueue.PrepareToSendQueue.QueueName"/>
+            
+             The function processes data from service bus queue and prepares the data to be processed in send, data queue.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendFunction.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendFunction"/> class.
+            </summary>
+            <param name="notificationDataRepository">Notification data repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendFunction.Run(System.String,Microsoft.DurableTask.Client.DurableTaskClient,Microsoft.Azure.Functions.Worker.FunctionContext)">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue.
+            It kicks off the durable orchestration for preparing to send notifications.
+            </summary>
+            <param name="myQueueItem">The Service Bus queue item.</param>
+            <param name="starter">Durable orchestration client.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendRecallFunction">
+             <summary>
+             Azure Function App triggered by messages from a Service Bus queue. <see cref="F:Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.MessageQueues.PrepareToRecallQueue.PrepareToRecallQueue.QueueName"/>
+            
+             The function processes data from service bus queue and prepares the data to be processed in send, data queue.
+             </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendRecallFunction.#ctor(Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.NotificationData.INotificationDataRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendRecallFunction"/> class.
+            </summary>
+            <param name="notificationDataRepository">Sent Notification data repository.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PrepareToSendRecallFunction.Run(System.String,Microsoft.DurableTask.Client.DurableTaskClient,Microsoft.Azure.Functions.Worker.FunctionContext)">
+            <summary>
+            Azure Function App triggered by messages from a Service Bus queue.
+            It kicks off the durable orchestration for preparing to send notifications.
+            </summary>
+            <param name="myQueueItem">The Service Bus queue item.</param>
+            <param name="starter">Durable orchestration client.</param>
+            <param name="log">Logger.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.TeamsConversationOptions">
+            <summary>
+            Options for Teams Conversation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.TeamsConversationOptions.ProactivelyInstallUserApp">
+            <summary>
+            Gets or sets a value indicating whether user app should be proactively installed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.TeamsConversationOptions.MaxAttemptsToCreateConversation">
+            <summary>
+            Gets or sets maximum attempts to create conversation with teams user.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.WorkerExtensionStartupCodeExecutor.Configure(Microsoft.Azure.Functions.Worker.IFunctionsWorkerApplicationBuilder)">
+            <summary>
+            Configures the worker to register extension startup services.
+            </summary>
+            <param name="applicationBuilder">The <see cref="T:Microsoft.Azure.Functions.Worker.IFunctionsWorkerApplicationBuilder"/> to configure.</param>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.DirectFunctionExecutor.ExecuteAsync(Microsoft.Azure.Functions.Worker.FunctionContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.FunctionExecutorHostBuilderExtensions">
+            <summary>
+            Extension methods to enable registration of the custom <see cref="T:Microsoft.Azure.Functions.Worker.Invocation.IFunctionExecutor"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.FunctionExecutorHostBuilderExtensions.ConfigureGeneratedFunctionExecutor(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+             Configures an optimized function executor to the invocation pipeline.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.FunctionExecutorAutoStartup">
+            <summary>
+            Auto startup class to register the custom <see cref="T:Microsoft.Azure.Functions.Worker.Invocation.IFunctionExecutor"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.FunctionExecutorAutoStartup.Configure(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+            Configures the <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> to use the custom <see cref="T:Microsoft.Azure.Functions.Worker.Invocation.IFunctionExecutor"/> implementation generated for the current worker.
+            </summary>
+            <param name="hostBuilder">The <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> instance to use for service registration.</param>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.GeneratedFunctionMetadataProvider">
+            <summary>
+            Custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation that returns function metadata definitions for the current worker."/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.GeneratedFunctionMetadataProvider.GetFunctionMetadataAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.WorkerHostBuilderFunctionMetadataProviderExtension">
+            <summary>
+            Extension methods to enable registration of the custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.WorkerHostBuilderFunctionMetadataProviderExtension.ConfigureGeneratedFunctionMetadataProvider(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+             Adds the GeneratedFunctionMetadataProvider to the service collection.
+             During initialization, the worker will return generated function metadata instead of relying on the Azure Functions host for function indexing.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.FunctionMetadataProviderAutoStartup">
+            <summary>
+            Auto startup class to register the custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation generated for the current worker.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.FunctionMetadataProviderAutoStartup.Configure(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+            Configures the <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> to use the custom <see cref="T:Microsoft.Azure.Functions.Worker.Core.FunctionMetadata.IFunctionMetadataProvider"/> implementation generated for the current worker.
+            </summary>
+            <param name="hostBuilder">The <see cref="T:Microsoft.Extensions.Hosting.IHostBuilder"/> instance to use for service registration.</param>
+        </member>
+    </members>
+</doc>

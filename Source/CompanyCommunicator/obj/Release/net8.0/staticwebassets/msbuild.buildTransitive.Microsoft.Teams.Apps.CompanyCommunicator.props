@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Microsoft.Teams.Apps.CompanyCommunicator.props" />
+</Project>

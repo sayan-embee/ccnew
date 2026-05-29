@@ -1,0 +1,13 @@
+{
+  "generatedBy": "Microsoft.NET.Sdk.Functions-3.0.11",
+  "configurationSource": "attributes",
+  "bindings": [
+    {
+      "type": "activityTrigger",
+      "name": "notification"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.dll",
+  "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend.SyncAllUsersActivity.RunAsync"
+}

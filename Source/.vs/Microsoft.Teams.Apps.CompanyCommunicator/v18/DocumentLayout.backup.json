@@ -1,0 +1,576 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Company\\Company Communicator\\.net8\\Source\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|solutionrelative:companycommunicator\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|solutionrelative:companycommunicator\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\export\\exportfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\export\\exportfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\assessment.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownPreview",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.github\\upgrades\\scenarios\\azure-functions-version\\assessment.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownPreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\plan.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.github\\upgrades\\scenarios\\azure-functions-version\\plan.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\scenario-instructions.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.github\\upgrades\\scenarios\\azure-functions-version\\scenario-instructions.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator\\authentication\\authenticationservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|solutionrelative:companycommunicator\\authentication\\authenticationservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator\\authentication\\graphtokenprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|solutionrelative:companycommunicator\\authentication\\graphtokenprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\execution-log.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.github\\upgrades\\scenarios\\azure-functions-version\\execution-log.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CompanyCommunicator.Data.Func\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.data.func\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|solutionrelative:companycommunicator.data.func\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.data.func\\companycommunicatordatafunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|solutionrelative:companycommunicator.data.func\\companycommunicatordatafunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.data.func\\companycommunicatordatarecallfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|solutionrelative:companycommunicator.data.func\\companycommunicatordatarecallfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.data.func\\companycommunicatorcleanupfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|solutionrelative:companycommunicator.data.func\\companycommunicatorcleanupfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.data.func\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|solutionrelative:companycommunicator.data.func\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.data.func\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{19DCF1AC-35D3-456B-9F9A-68BC8AC21696}|CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj|solutionrelative:companycommunicator.data.func\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CompanyCommunicator.Send.Func\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.send.func\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|solutionrelative:companycommunicator.send.func\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.send.func\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|solutionrelative:companycommunicator.send.func\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.send.func\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|solutionrelative:companycommunicator.send.func\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.send.func\\sendfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|solutionrelative:companycommunicator.send.func\\sendfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.send.func\\recallmessagefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B8D012F-A70D-40E5-AFB7-65BCD90CACBE}|CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj|solutionrelative:companycommunicator.send.func\\recallmessagefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CompanyCommunicator.Prep.Func\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\preparingtosend\\functionsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\preparingtosend\\functionsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\011873\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-193875831\\Startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\preparingtosend\\orchestrators\\sendqueueorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\preparingtosend\\orchestrators\\sendqueueorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\preparingtosend\\orchestrators\\sendrecallqueueorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\preparingtosend\\orchestrators\\sendrecallqueueorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\preparingtosend\\orchestrators\\teamsconversationorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\preparingtosend\\orchestrators\\teamsconversationorchestrator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\preparingtosend\\preparetosendfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\preparingtosend\\preparetosendfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator.prep.func\\preparingtosend\\preparetosendrecallfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8831097-3A82-43A4-8122-56A146F70600}|CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj|solutionrelative:companycommunicator.prep.func\\preparingtosend\\preparetosendrecallfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|e:\\company\\company communicator\\.net8\\source\\companycommunicator\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EF4F8A5-2C38-4059-BD5C-E8478DE4779F}|CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj|solutionrelative:companycommunicator\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CompanyCommunicator\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-29T09:39:02.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Startup.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator\\Startup.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Startup.cs",
+              "RelativeToolTip": "CompanyCommunicator\\Startup.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T09:29:33.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\appsettings.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator\\appsettings.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\appsettings.json",
+              "RelativeToolTip": "CompanyCommunicator\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-29T09:23:23.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExportFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\Export\\ExportFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\Export\\ExportFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\Export\\ExportFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\Export\\ExportFunction.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:23:28.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PrepareToSendFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendFunction.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:23:28.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "PrepareToSendRecallFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendRecallFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendRecallFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendRecallFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\PreparingToSend\\PrepareToSendRecallFunction.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:23:28.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SendQueueOrchestrator.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendQueueOrchestrator.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendQueueOrchestrator.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendQueueOrchestrator.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendQueueOrchestrator.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:23:27.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "TeamsConversationOrchestrator.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\TeamsConversationOrchestrator.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\TeamsConversationOrchestrator.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\TeamsConversationOrchestrator.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\TeamsConversationOrchestrator.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:23:28.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "SendRecallQueueOrchestrator.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendRecallQueueOrchestrator.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendRecallQueueOrchestrator.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendRecallQueueOrchestrator.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\PreparingToSend\\Orchestrators\\SendRecallQueueOrchestrator.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:23:27.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\Startup.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\Startup.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\Startup.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\Startup.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:10:02.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\011873\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-193875831\\Startup.cs",
+              "ToolTip": "C:\\Users\\011873\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-193875831\\Startup.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:10:04.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\Program.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\Program.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\Program.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\Program.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAABBwJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:10:04.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "local.settings.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\local.settings.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\local.settings.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\local.settings.json",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T09:10:03.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "host.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\host.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\host.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\host.json",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\host.json",
+              "ViewState": "AgIAAAQAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T09:10:03.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FunctionSettings.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\FunctionSettings.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Prep.Func\\PreparingToSend\\FunctionSettings.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Prep.Func\\PreparingToSend\\FunctionSettings.cs",
+              "RelativeToolTip": "CompanyCommunicator.Prep.Func\\PreparingToSend\\FunctionSettings.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T09:10:03.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "host.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\host.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Data.Func\\host.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\host.json",
+              "RelativeToolTip": "CompanyCommunicator.Data.Func\\host.json",
+              "ViewState": "AgIAAAQAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T07:38:13.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RecallMessageFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\RecallMessageFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Send.Func\\RecallMessageFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\RecallMessageFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Send.Func\\RecallMessageFunction.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:41:45.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SendFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\SendFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Send.Func\\SendFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\SendFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Send.Func\\SendFunction.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:41:45.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\Program.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Send.Func\\Program.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\Program.cs",
+              "RelativeToolTip": "CompanyCommunicator.Send.Func\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:40:48.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "local.settings.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\local.settings.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Send.Func\\local.settings.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\local.settings.json",
+              "RelativeToolTip": "CompanyCommunicator.Send.Func\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T07:40:48.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "host.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\host.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Send.Func\\host.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\host.json",
+              "RelativeToolTip": "CompanyCommunicator.Send.Func\\host.json",
+              "ViewState": "AgIAAAQAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T07:40:48.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\Startup.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Send.Func\\Startup.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Send.Func\\Startup.cs",
+              "RelativeToolTip": "CompanyCommunicator.Send.Func\\Startup.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:40:47.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "local.settings.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\local.settings.json",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Data.Func\\local.settings.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\local.settings.json",
+              "RelativeToolTip": "CompanyCommunicator.Data.Func\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T07:39:23.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CompanyCommunicatorCleanUpFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\CompanyCommunicatorCleanUpFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Data.Func\\CompanyCommunicatorCleanUpFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\CompanyCommunicatorCleanUpFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Data.Func\\CompanyCommunicatorCleanUpFunction.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:38:13.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CompanyCommunicatorDataRecallFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\CompanyCommunicatorDataRecallFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Data.Func\\CompanyCommunicatorDataRecallFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\CompanyCommunicatorDataRecallFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Data.Func\\CompanyCommunicatorDataRecallFunction.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:38:12.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CompanyCommunicatorDataFunction.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\CompanyCommunicatorDataFunction.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Data.Func\\CompanyCommunicatorDataFunction.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\CompanyCommunicatorDataFunction.cs",
+              "RelativeToolTip": "CompanyCommunicator.Data.Func\\CompanyCommunicatorDataFunction.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:38:12.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "execution-log.md",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\execution-log.md",
+              "RelativeDocumentMoniker": ".github\\upgrades\\scenarios\\azure-functions-version\\execution-log.md",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\execution-log.md",
+              "RelativeToolTip": ".github\\upgrades\\scenarios\\azure-functions-version\\execution-log.md",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-07T07:35:32.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\Program.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Data.Func\\Program.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\Program.cs",
+              "RelativeToolTip": "CompanyCommunicator.Data.Func\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:36:58.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\Startup.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator.Data.Func\\Startup.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator.Data.Func\\Startup.cs",
+              "RelativeToolTip": "CompanyCommunicator.Data.Func\\Startup.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:36:58.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GraphTokenProvider.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Authentication\\GraphTokenProvider.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator\\Authentication\\GraphTokenProvider.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Authentication\\GraphTokenProvider.cs",
+              "RelativeToolTip": "CompanyCommunicator\\Authentication\\GraphTokenProvider.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:34:41.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthenticationServiceCollectionExtensions.cs",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Authentication\\AuthenticationServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "CompanyCommunicator\\Authentication\\AuthenticationServiceCollectionExtensions.cs",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\CompanyCommunicator\\Authentication\\AuthenticationServiceCollectionExtensions.cs",
+              "RelativeToolTip": "CompanyCommunicator\\Authentication\\AuthenticationServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T07:32:34.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "global.json",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\global.json",
+              "RelativeDocumentMoniker": "global.json",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\global.json",
+              "RelativeToolTip": "global.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-07T07:25:06.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "scenario-instructions.md",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\scenario-instructions.md",
+              "RelativeDocumentMoniker": ".github\\upgrades\\scenarios\\azure-functions-version\\scenario-instructions.md",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\scenario-instructions.md",
+              "RelativeToolTip": ".github\\upgrades\\scenarios\\azure-functions-version\\scenario-instructions.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-07T06:30:18.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "plan.md",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\plan.md",
+              "RelativeDocumentMoniker": ".github\\upgrades\\scenarios\\azure-functions-version\\plan.md",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\plan.md",
+              "RelativeToolTip": ".github\\upgrades\\scenarios\\azure-functions-version\\plan.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-07T06:18:20.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "assessment.md [Preview]",
+              "DocumentMoniker": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\assessment.md",
+              "RelativeDocumentMoniker": ".github\\upgrades\\scenarios\\azure-functions-version\\assessment.md",
+              "ToolTip": "E:\\Company\\Company Communicator\\.net8\\Source\\.github\\upgrades\\scenarios\\azure-functions-version\\assessment.md [Preview]",
+              "RelativeToolTip": ".github\\upgrades\\scenarios\\azure-functions-version\\assessment.md [Preview]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-07T06:10:43.208Z",
+              "EditorCaption": " [Preview]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

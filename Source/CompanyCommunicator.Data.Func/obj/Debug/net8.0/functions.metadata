@@ -1,0 +1,62 @@
+[
+  {
+    "name": "CompanyCommunicatorCleanUpFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.CompanyCommunicatorCleanUpFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myTimer",
+        "direction": "In",
+        "type": "timerTrigger",
+        "schedule": "%CleanUpScheduleTriggerTime%",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "CompanyCommunicatorDataFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.CompanyCommunicatorDataFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "company-communicator-data",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "CompanyCommunicatorDataRecallFunction",
+    "scriptFile": "Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.dll",
+    "entryPoint": "Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.CompanyCommunicatorDataRecallFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "myQueueItem",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "dataType": "String",
+        "queueName": "company-communicator-data-recall",
+        "connection": "ServiceBusConnection",
+        "cardinality": "One",
+        "properties": {}
+      }
+    ]
+  }
+]

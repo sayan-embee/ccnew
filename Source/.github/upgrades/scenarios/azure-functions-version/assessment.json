@@ -1,0 +1,1576 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net8.0",
+    "targetDisplayName": ".NETCoreApp,Version=v8.0"
+  },
+  "analysisStartTime": "2026-05-07T06:10:22.7740241Z",
+  "analysisEndTime": "2026-05-07T06:10:34.2156132Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 6,
+      "issues": 9,
+      "incidents": 56,
+      "effort": 62
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 25,
+        "Optional": 15,
+        "Potential": 16,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 42,
+        "Project": 6,
+        "Api": 5,
+        "AzureFunctionsUpgrade": 3
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+      "startingProject": true,
+      "issues": 5,
+      "storyPoints": 8,
+      "properties": {
+        "appName": "Microsoft.Teams.Apps.CompanyCommunicator.Common",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 155,
+        "numberOfCodeFiles": 140,
+        "linesTotal": 14122,
+        "linesOfCode": 10372,
+        "totalApiScanned": 5978,
+        "minLinesOfCodeToChange": 2,
+        "maxLinesOfCodeToChange": 2
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "a2c37832-24fc-425a-8f6f-655861dc2816",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Configuration, 2.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0",
+              "protected": "Microsoft.Extensions.Configuration, 2.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+            "snippet": "Microsoft.Extensions.Configuration, 2.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0",
+            "protectedSnippet": "Microsoft.Extensions.Configuration, 2.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0",
+            "label": "Microsoft.Extensions.Configuration 2.1.1",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Configuration",
+              "PackageVersion": "2.1.1",
+              "PackageNewVersion": "8.0.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "6775af8b-7c9f-4f9b-812d-86ad92c45a16",
+          "ruleId": "NuGet.0004",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+              "protected": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+            "snippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "protectedSnippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "label": "Azure.Storage.Blobs 12.8.0",
+            "properties": {
+              "PackageId": "Azure.Storage.Blobs",
+              "PackageVersion": "12.8.0",
+              "PackageNewVersion": "12.27.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "d36ab4e6-c645-466e-ba97-8feadff43f0a",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.Cosmos.Table, 1.0.1\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Data.Tables, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/tables/Azure.Data.Tables/MigrationGuide.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Cosmos.Table, and replace with new package Microsoft.Azure.Cosmos.Table, 1.0.8",
+              "protected": "Microsoft.Azure.Cosmos.Table, 1.0.1\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Data.Tables, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/tables/Azure.Data.Tables/MigrationGuide.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Cosmos.Table, and replace with new package Microsoft.Azure.Cosmos.Table, 1.0.8"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+            "snippet": "Microsoft.Azure.Cosmos.Table, 1.0.1\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Data.Tables, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/tables/Azure.Data.Tables/MigrationGuide.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Cosmos.Table, and replace with new package Microsoft.Azure.Cosmos.Table, 1.0.8",
+            "protectedSnippet": "Microsoft.Azure.Cosmos.Table, 1.0.1\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Data.Tables, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/tables/Azure.Data.Tables/MigrationGuide.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Cosmos.Table, and replace with new package Microsoft.Azure.Cosmos.Table, 1.0.8",
+            "label": "Microsoft.Azure.Cosmos.Table 1.0.1",
+            "properties": {
+              "PackageId": "Microsoft.Azure.Cosmos.Table",
+              "PackageVersion": "1.0.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "2c5084a4-e405-4f2f-9c77-582d634845b4",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.ServiceBus, 4.1.1\n\nRecommendation:\n\nPlease note, this package is obsolete and will no longer be maintained after 9/30/2026. Microsoft encourages you to upgrade to the replacement package, Azure.Messaging.ServiceBus, to continue receiving updates. Refer to the migration guide (https://aka.ms/azsdk/net/migrate/sb) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.ServiceBus, and replace with new package Microsoft.Azure.ServiceBus, 5.2.0",
+              "protected": "Microsoft.Azure.ServiceBus, 4.1.1\n\nRecommendation:\n\nPlease note, this package is obsolete and will no longer be maintained after 9/30/2026. Microsoft encourages you to upgrade to the replacement package, Azure.Messaging.ServiceBus, to continue receiving updates. Refer to the migration guide (https://aka.ms/azsdk/net/migrate/sb) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.ServiceBus, and replace with new package Microsoft.Azure.ServiceBus, 5.2.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+            "snippet": "Microsoft.Azure.ServiceBus, 4.1.1\n\nRecommendation:\n\nPlease note, this package is obsolete and will no longer be maintained after 9/30/2026. Microsoft encourages you to upgrade to the replacement package, Azure.Messaging.ServiceBus, to continue receiving updates. Refer to the migration guide (https://aka.ms/azsdk/net/migrate/sb) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.ServiceBus, and replace with new package Microsoft.Azure.ServiceBus, 5.2.0",
+            "protectedSnippet": "Microsoft.Azure.ServiceBus, 4.1.1\n\nRecommendation:\n\nPlease note, this package is obsolete and will no longer be maintained after 9/30/2026. Microsoft encourages you to upgrade to the replacement package, Azure.Messaging.ServiceBus, to continue receiving updates. Refer to the migration guide (https://aka.ms/azsdk/net/migrate/sb) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.ServiceBus, and replace with new package Microsoft.Azure.ServiceBus, 5.2.0",
+            "label": "Microsoft.Azure.ServiceBus 4.1.1",
+            "properties": {
+              "PackageId": "Microsoft.Azure.ServiceBus",
+              "PackageVersion": "4.1.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "49ebafe6-88a9-4199-a24e-374b26818487",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Identity.Client, 4.15.0\n\nRecommendation:\n\nMove to latest Microsoft.Identity.Client. See https://aka.ms/msal/LTS for details.\nRemove Microsoft.Identity.Client, and replace with new package Microsoft.Identity.Client, 4.84.0",
+              "protected": "Microsoft.Identity.Client, 4.15.0\n\nRecommendation:\n\nMove to latest Microsoft.Identity.Client. See https://aka.ms/msal/LTS for details.\nRemove Microsoft.Identity.Client, and replace with new package Microsoft.Identity.Client, 4.84.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+            "snippet": "Microsoft.Identity.Client, 4.15.0\n\nRecommendation:\n\nMove to latest Microsoft.Identity.Client. See https://aka.ms/msal/LTS for details.\nRemove Microsoft.Identity.Client, and replace with new package Microsoft.Identity.Client, 4.84.0",
+            "protectedSnippet": "Microsoft.Identity.Client, 4.15.0\n\nRecommendation:\n\nMove to latest Microsoft.Identity.Client. See https://aka.ms/msal/LTS for details.\nRemove Microsoft.Identity.Client, and replace with new package Microsoft.Identity.Client, 4.84.0",
+            "label": "Microsoft.Identity.Client 4.15.0",
+            "properties": {
+              "PackageId": "Microsoft.Identity.Client",
+              "PackageVersion": "4.15.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "9a9dd013-4022-4583-a9ba-d3d4cd7c46e3",
+          "ruleId": "Project.0002",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net8.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net8.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net8.0"
+            }
+          }
+        },
+        {
+          "incidentId": "349f8968-d4a2-45b2-8dd3-4483e3ae3bda",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var userstemp = content[\u0022value\u0022]\r\n                            .Children()\r\n                            .OfType\u003CJObject\u003E()\r\n                            .Select(obj =\u003E obj.ToObject\u003CUser\u003E());",
+              "protected": "T:System.Linq.AsyncEnumerable"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Services\\MicrosoftGraph\\Users\\UsersService.cs",
+            "snippet": "var userstemp = content[\u0022value\u0022]\r\n                            .Children()\r\n                            .OfType\u003CJObject\u003E()\r\n                            .Select(obj =\u003E obj.ToObject\u003CUser\u003E());",
+            "protectedSnippet": "T:System.Linq.AsyncEnumerable",
+            "label": "T:System.Linq.AsyncEnumerable",
+            "line": 72,
+            "column": 24
+          }
+        },
+        {
+          "incidentId": "8419249b-b653-4dad-a618-0ff1e4b13bdf",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var userstemp = content[\u0022value\u0022]\r\n                            .Children()\r\n                            .OfType\u003CJObject\u003E()\r\n                            .Select(obj =\u003E obj.ToObject\u003CUser\u003E());",
+              "protected": "T:System.Linq.AsyncEnumerable"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Common\\Services\\MicrosoftGraph\\Users\\UsersServiceByTenant.cs",
+            "snippet": "var userstemp = content[\u0022value\u0022]\r\n                            .Children()\r\n                            .OfType\u003CJObject\u003E()\r\n                            .Select(obj =\u003E obj.ToObject\u003CUser\u003E());",
+            "protectedSnippet": "T:System.Linq.AsyncEnumerable",
+            "label": "T:System.Linq.AsyncEnumerable",
+            "line": 68,
+            "column": 24
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+      "startingProject": true,
+      "issues": 6,
+      "storyPoints": 15,
+      "properties": {
+        "appName": "Microsoft.Teams.Apps.CompanyCommunicator",
+        "projectKind": "AspNetCore",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 56,
+        "numberOfCodeFiles": 54,
+        "linesTotal": 5332,
+        "linesOfCode": 5301,
+        "totalApiScanned": 3479,
+        "minLinesOfCodeToChange": 3,
+        "maxLinesOfCodeToChange": 3
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "f19e33aa-a8fd-4e6c-b068-0175a9aa670b",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.JwtBearer, and replace with new package Microsoft.AspNetCore.Authentication.JwtBearer 8.0.26",
+              "protected": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.JwtBearer, and replace with new package Microsoft.AspNetCore.Authentication.JwtBearer 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.JwtBearer, and replace with new package Microsoft.AspNetCore.Authentication.JwtBearer 8.0.26",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.JwtBearer, and replace with new package Microsoft.AspNetCore.Authentication.JwtBearer 8.0.26",
+            "label": "Microsoft.AspNetCore.Authentication.JwtBearer 3.1.4",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.Authentication.JwtBearer",
+              "PackageVersion": "3.1.4",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "6ff71ad6-6198-4e4b-9063-d951e1e3c036",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.OpenIdConnect, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.OpenIdConnect, and replace with new package Microsoft.AspNetCore.Authentication.OpenIdConnect 8.0.26",
+              "protected": "Microsoft.AspNetCore.Authentication.OpenIdConnect, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.OpenIdConnect, and replace with new package Microsoft.AspNetCore.Authentication.OpenIdConnect 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.OpenIdConnect, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.OpenIdConnect, and replace with new package Microsoft.AspNetCore.Authentication.OpenIdConnect 8.0.26",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.OpenIdConnect, 3.1.4\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.OpenIdConnect, and replace with new package Microsoft.AspNetCore.Authentication.OpenIdConnect 8.0.26",
+            "label": "Microsoft.AspNetCore.Authentication.OpenIdConnect 3.1.4",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.Authentication.OpenIdConnect",
+              "PackageVersion": "3.1.4",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "581f7313-7fdf-4946-9bd2-3487b2fa3861",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.SpaServices.Extensions, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.SpaServices.Extensions, and replace with new package Microsoft.AspNetCore.SpaServices.Extensions 8.0.26",
+              "protected": "Microsoft.AspNetCore.SpaServices.Extensions, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.SpaServices.Extensions, and replace with new package Microsoft.AspNetCore.SpaServices.Extensions 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.AspNetCore.SpaServices.Extensions, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.SpaServices.Extensions, and replace with new package Microsoft.AspNetCore.SpaServices.Extensions 8.0.26",
+            "protectedSnippet": "Microsoft.AspNetCore.SpaServices.Extensions, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.SpaServices.Extensions, and replace with new package Microsoft.AspNetCore.SpaServices.Extensions 8.0.26",
+            "label": "Microsoft.AspNetCore.SpaServices.Extensions 3.1.1",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SpaServices.Extensions",
+              "PackageVersion": "3.1.1",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "bb389713-9a20-49d5-88fc-2f91a6befa66",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.Identity.Web 4.9.0",
+              "protected": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.Identity.Web 4.9.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.Identity.Web 4.9.0",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.Identity.Web 4.9.0",
+            "label": "Microsoft.AspNetCore.Authentication.AzureAD.UI 3.1.1",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.Authentication.AzureAD.UI",
+              "PackageVersion": "3.1.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": "Replace with new package Microsoft.Identity.Web=4.9.0"
+            }
+          }
+        },
+        {
+          "incidentId": "10e740ff-fe27-47cf-b676-1f03e27e86c0",
+          "ruleId": "NuGet.0001",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "label": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.10.9",
+            "properties": {
+              "PackageId": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+              "PackageVersion": "1.10.9",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "23dad4b8-973f-4ba0-bdfa-652f9afcea0b",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 3.1.5\n\nRecommendation:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.23",
+              "protected": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 3.1.5\n\nRecommendation:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.23"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 3.1.5\n\nRecommendation:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.23",
+            "protectedSnippet": "Microsoft.VisualStudio.Web.CodeGeneration.Design, 3.1.5\n\nRecommendation:\n\nRemove Microsoft.VisualStudio.Web.CodeGeneration.Design, and replace with new package Microsoft.VisualStudio.Web.CodeGeneration.Design 8.0.23",
+            "label": "Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.5",
+            "properties": {
+              "PackageId": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+              "PackageVersion": "3.1.5",
+              "PackageNewVersion": "8.0.23",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "a0f572fe-5ea7-4f0d-92ac-f3d3aaf9eb02",
+          "ruleId": "NuGet.0004",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+              "protected": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "protectedSnippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "label": "Azure.Storage.Blobs 12.8.0",
+            "properties": {
+              "PackageId": "Azure.Storage.Blobs",
+              "PackageVersion": "12.8.0",
+              "PackageNewVersion": "12.27.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "adc0c65b-4338-4e11-9da6-36f06fac8c4c",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.ApplicationInsights.AspNetCore, 2.17.0\n\nRecommendation:\n\nThis version is deprecated. Please use the most recent version.\nRemove Microsoft.ApplicationInsights.AspNetCore, and replace with new package Microsoft.ApplicationInsights.AspNetCore, 3.1.0",
+              "protected": "Microsoft.ApplicationInsights.AspNetCore, 2.17.0\n\nRecommendation:\n\nThis version is deprecated. Please use the most recent version.\nRemove Microsoft.ApplicationInsights.AspNetCore, and replace with new package Microsoft.ApplicationInsights.AspNetCore, 3.1.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.ApplicationInsights.AspNetCore, 2.17.0\n\nRecommendation:\n\nThis version is deprecated. Please use the most recent version.\nRemove Microsoft.ApplicationInsights.AspNetCore, and replace with new package Microsoft.ApplicationInsights.AspNetCore, 3.1.0",
+            "protectedSnippet": "Microsoft.ApplicationInsights.AspNetCore, 2.17.0\n\nRecommendation:\n\nThis version is deprecated. Please use the most recent version.\nRemove Microsoft.ApplicationInsights.AspNetCore, and replace with new package Microsoft.ApplicationInsights.AspNetCore, 3.1.0",
+            "label": "Microsoft.ApplicationInsights.AspNetCore 2.17.0",
+            "properties": {
+              "PackageId": "Microsoft.ApplicationInsights.AspNetCore",
+              "PackageVersion": "2.17.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "dd9105f8-2d36-473a-9dd2-8766fa0baba3",
+          "ruleId": "NuGet.0004",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer, 8.0.26",
+              "protected": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer, 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer, 8.0.26",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 3.1.4\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer, 8.0.26",
+            "label": "Microsoft.AspNetCore.Authentication.JwtBearer 3.1.4",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.Authentication.JwtBearer",
+              "PackageVersion": "3.1.4",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "444e995b-3ee9-4806-bd7e-99570c15c28a",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.Storage.Blob, 11.2.3\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Storage.Blobs, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/storage/Azure.Storage.Blobs/AzureStorageNetMigrationV12.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Storage.Blob, and replace with new package Microsoft.Azure.Storage.Blob, 11.2.3",
+              "protected": "Microsoft.Azure.Storage.Blob, 11.2.3\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Storage.Blobs, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/storage/Azure.Storage.Blobs/AzureStorageNetMigrationV12.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Storage.Blob, and replace with new package Microsoft.Azure.Storage.Blob, 11.2.3"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.Azure.Storage.Blob, 11.2.3\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Storage.Blobs, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/storage/Azure.Storage.Blobs/AzureStorageNetMigrationV12.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Storage.Blob, and replace with new package Microsoft.Azure.Storage.Blob, 11.2.3",
+            "protectedSnippet": "Microsoft.Azure.Storage.Blob, 11.2.3\n\nRecommendation:\n\nPlease note, this package is obsolete as of 3/31/2023 and is no longer maintained or monitored. Microsoft encourages you to upgrade to the replacement package, Azure.Storage.Blobs, to continue receiving updates. Refer to the migration guide (https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/storage/Azure.Storage.Blobs/AzureStorageNetMigrationV12.md) for guidance on upgrading. Refer to our deprecation policy (https://aka.ms/azsdk/support-policies) for more details.\nRemove Microsoft.Azure.Storage.Blob, and replace with new package Microsoft.Azure.Storage.Blob, 11.2.3",
+            "label": "Microsoft.Azure.Storage.Blob 11.2.3",
+            "properties": {
+              "PackageId": "Microsoft.Azure.Storage.Blob",
+              "PackageVersion": "11.2.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "11f3ec37-636f-4f50-a0f0-05a00ae1ded5",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217. Please move to Microsoft.Identity.Web.UI package instead. For more information on how to migrate, please look at https://learn.microsoft.com/en-us/entra/identity-platform/scenario-web-app-sign-user-app-configuration?tabs=aspnetcore#initialization-code\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.AspNetCore.Authentication.AzureAD.UI, 6.0.36",
+              "protected": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217. Please move to Microsoft.Identity.Web.UI package instead. For more information on how to migrate, please look at https://learn.microsoft.com/en-us/entra/identity-platform/scenario-web-app-sign-user-app-configuration?tabs=aspnetcore#initialization-code\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.AspNetCore.Authentication.AzureAD.UI, 6.0.36"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217. Please move to Microsoft.Identity.Web.UI package instead. For more information on how to migrate, please look at https://learn.microsoft.com/en-us/entra/identity-platform/scenario-web-app-sign-user-app-configuration?tabs=aspnetcore#initialization-code\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.AspNetCore.Authentication.AzureAD.UI, 6.0.36",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.AzureAD.UI, 3.1.1\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217. Please move to Microsoft.Identity.Web.UI package instead. For more information on how to migrate, please look at https://learn.microsoft.com/en-us/entra/identity-platform/scenario-web-app-sign-user-app-configuration?tabs=aspnetcore#initialization-code\nRemove Microsoft.AspNetCore.Authentication.AzureAD.UI, and replace with new package Microsoft.AspNetCore.Authentication.AzureAD.UI, 6.0.36",
+            "label": "Microsoft.AspNetCore.Authentication.AzureAD.UI 3.1.1",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.Authentication.AzureAD.UI",
+              "PackageVersion": "3.1.1",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "da34d6a4-b660-404d-9763-b2aaf7db8d09",
+          "ruleId": "Project.0002",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net8.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net8.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net8.0"
+            }
+          }
+        },
+        {
+          "incidentId": "68e24b14-223d-491a-a4c6-440098654313",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var claimValue = securityToken.Claims\r\n                .First(claim =\u003E claim.Type.Equals(Common.Constants.ClaimTypeScp.ToString(), StringComparison.CurrentCultureIgnoreCase)).Value;",
+              "protected": "P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Claims"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Authentication\\MSGraphScopeHandler.cs",
+            "snippet": "var claimValue = securityToken.Claims\r\n                .First(claim =\u003E claim.Type.Equals(Common.Constants.ClaimTypeScp.ToString(), StringComparison.CurrentCultureIgnoreCase)).Value;",
+            "protectedSnippet": "P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Claims",
+            "label": "P:System.IdentityModel.Tokens.Jwt.JwtSecurityToken.Claims",
+            "line": 56,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2d42cb5e-e17b-42e4-8b08-8c2b7e97fac7",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var tokenHandler = new JwtSecurityTokenHandler();",
+              "protected": "T:System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Authentication\\MSGraphScopeHandler.cs",
+            "snippet": "var tokenHandler = new JwtSecurityTokenHandler();",
+            "protectedSnippet": "T:System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler",
+            "label": "T:System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler",
+            "line": 54,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "9e21df2e-e72b-4279-8109-3f7aafb36a4d",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var tokenHandler = new JwtSecurityTokenHandler();",
+              "protected": "M:System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.#ctor"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator\\Authentication\\MSGraphScopeHandler.cs",
+            "snippet": "var tokenHandler = new JwtSecurityTokenHandler();",
+            "protectedSnippet": "M:System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.#ctor",
+            "label": "M:System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.#ctor",
+            "line": 54,
+            "column": 12
+          }
+        }
+      ],
+      "features": [
+        {
+          "featureId": "IdentityModel",
+          "incidents": [
+            "9e21df2e-e72b-4279-8109-3f7aafb36a4d",
+            "2d42cb5e-e17b-42e4-8b08-8c2b7e97fac7",
+            "68e24b14-223d-491a-a4c6-440098654313"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+      "startingProject": true,
+      "issues": 7,
+      "storyPoints": 12,
+      "properties": {
+        "appName": "Microsoft.Teams.Apps.CompanyCommunicator.Data.Func",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 16,
+        "numberOfCodeFiles": 16,
+        "linesTotal": 1368,
+        "linesOfCode": 1368,
+        "totalApiScanned": 792,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "56e658e4-3e4f-4198-ab2d-90ba80228952",
+          "ruleId": "AzureFunctionsUpgrade.0002",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj"
+          }
+        },
+        {
+          "incidentId": "e724fde6-aa41-418f-92b5-1c313254cc95",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+              "protected": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+            "protectedSnippet": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+            "label": "Microsoft.Extensions.Localization 3.1.8",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Localization",
+              "PackageVersion": "3.1.8",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "d102cccc-337b-4622-a770-0622b1cff677",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26",
+              "protected": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26",
+            "protectedSnippet": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26",
+            "label": "Microsoft.Extensions.Localization.Abstractions 3.1.8",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Localization.Abstractions",
+              "PackageVersion": "3.1.8",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "fec4bb4a-0d7d-474b-a542-c7df1038b490",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+              "protected": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+            "protectedSnippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+            "label": "Microsoft.NET.Sdk.Functions 3.0.11",
+            "properties": {
+              "PackageId": "Microsoft.NET.Sdk.Functions",
+              "PackageVersion": "3.0.11",
+              "PackageNewVersion": null,
+              "PackageReplacements": "Replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http=3.3.0;Microsoft.Azure.Functions.Worker.Sdk=1.18.1;Microsoft.Azure.Functions.Worker=1.24.0"
+            }
+          }
+        },
+        {
+          "incidentId": "e9aa766e-6ef0-4187-a4d7-2207574ed963",
+          "ruleId": "NuGet.0001",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "label": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.10.9",
+            "properties": {
+              "PackageId": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+              "PackageVersion": "1.10.9",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "be42cd02-af19-4e62-b25f-6edb616f4642",
+          "ruleId": "NuGet.0004",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+              "protected": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "protectedSnippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "label": "Azure.Storage.Blobs 12.8.0",
+            "properties": {
+              "PackageId": "Azure.Storage.Blobs",
+              "PackageVersion": "12.8.0",
+              "PackageNewVersion": "12.27.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "baea397e-b778-4733-a55e-370d5eccb299",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+              "protected": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+            "protectedSnippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+            "label": "Microsoft.NET.Sdk.Functions 3.0.11",
+            "properties": {
+              "PackageId": "Microsoft.NET.Sdk.Functions",
+              "PackageVersion": "3.0.11",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "4d22b53e-fbef-44a3-9f87-331db0cc9ea9",
+          "ruleId": "Project.0002",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net8.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net8.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net8.0"
+            }
+          }
+        },
+        {
+          "incidentId": "a2535590-f895-4639-ac32-5d64341f4e65",
+          "ruleId": "NuGet.0003",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Azure.WebJobs.Extensions.ServiceBus 3.0.3",
+            "properties": {
+              "PackageId": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+              "PackageVersion": "3.0.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "edbec005-4eff-44ac-b95b-507b266be5c2",
+          "ruleId": "NuGet.0003",
+          "projectPath": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+            "snippet": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Azure.WebJobs.Host.Storage 3.0.14",
+            "properties": {
+              "PackageId": "Microsoft.Azure.WebJobs.Host.Storage",
+              "PackageVersion": "3.0.14",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+      "startingProject": true,
+      "issues": 7,
+      "storyPoints": 13,
+      "properties": {
+        "appName": "Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 53,
+        "numberOfCodeFiles": 53,
+        "linesTotal": 5052,
+        "linesOfCode": 5052,
+        "totalApiScanned": 3256,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "804d7d3f-93f2-4eba-893c-d3bd415ae3eb",
+          "ruleId": "AzureFunctionsUpgrade.0002",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj"
+          }
+        },
+        {
+          "incidentId": "7d902e2e-393c-4397-a07b-ee0e21764160",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+              "protected": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+            "protectedSnippet": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+            "label": "Microsoft.Extensions.Localization 3.1.8",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Localization",
+              "PackageVersion": "3.1.8",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "15c28548-4665-4078-9c99-70dbf40f39aa",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Logging, 3.1.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 8.0.1",
+              "protected": "Microsoft.Extensions.Logging, 3.1.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 8.0.1"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.Extensions.Logging, 3.1.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 8.0.1",
+            "protectedSnippet": "Microsoft.Extensions.Logging, 3.1.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Logging, and replace with new package Microsoft.Extensions.Logging 8.0.1",
+            "label": "Microsoft.Extensions.Logging 3.1.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Logging",
+              "PackageVersion": "3.1.0",
+              "PackageNewVersion": "8.0.1",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "424c289b-ba80-4c91-9bbd-87b4ad1e2ed9",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+              "protected": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+            "protectedSnippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+            "label": "Microsoft.NET.Sdk.Functions 3.0.11",
+            "properties": {
+              "PackageId": "Microsoft.NET.Sdk.Functions",
+              "PackageVersion": "3.0.11",
+              "PackageNewVersion": null,
+              "PackageReplacements": "Replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http=3.3.0;Microsoft.Azure.Functions.Worker.Sdk=1.18.1;Microsoft.Azure.Functions.Worker=1.24.0"
+            }
+          }
+        },
+        {
+          "incidentId": "ec96d4ec-07cc-4788-a65a-f719365f9d35",
+          "ruleId": "NuGet.0001",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "label": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.10.9",
+            "properties": {
+              "PackageId": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+              "PackageVersion": "1.10.9",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "ba80718c-4a96-4ed4-9d18-fb6d4cedadd4",
+          "ruleId": "NuGet.0004",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+              "protected": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "protectedSnippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "label": "Azure.Storage.Blobs 12.8.0",
+            "properties": {
+              "PackageId": "Azure.Storage.Blobs",
+              "PackageVersion": "12.8.0",
+              "PackageNewVersion": "12.27.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "cf4351d4-9088-47b5-ae23-9810c11ad82e",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+              "protected": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+            "protectedSnippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+            "label": "Microsoft.NET.Sdk.Functions 3.0.11",
+            "properties": {
+              "PackageId": "Microsoft.NET.Sdk.Functions",
+              "PackageVersion": "3.0.11",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "e184cb32-fd0f-471b-bd96-c2157647070e",
+          "ruleId": "Project.0002",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net8.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net8.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net8.0"
+            }
+          }
+        },
+        {
+          "incidentId": "a9ecc90e-97ea-4ecc-858a-e5bf76914828",
+          "ruleId": "NuGet.0003",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.WebJobs.Extensions.DurableTask, 2.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Azure.WebJobs.Extensions.DurableTask, 2.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.Azure.WebJobs.Extensions.DurableTask, 2.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Azure.WebJobs.Extensions.DurableTask, 2.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Azure.WebJobs.Extensions.DurableTask 2.3.0",
+            "properties": {
+              "PackageId": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
+              "PackageVersion": "2.3.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "82d60831-8d6c-4b67-bcde-19044b450cd4",
+          "ruleId": "NuGet.0003",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Azure.WebJobs.Extensions.ServiceBus 3.0.3",
+            "properties": {
+              "PackageId": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+              "PackageVersion": "3.0.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "b3553f37-e9f1-422f-ab80-ea0a22b9ca76",
+          "ruleId": "NuGet.0003",
+          "projectPath": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+            "snippet": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Azure.WebJobs.Host.Storage 3.0.14",
+            "properties": {
+              "PackageId": "Microsoft.Azure.WebJobs.Host.Storage",
+              "PackageVersion": "3.0.14",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj",
+      "startingProject": true,
+      "issues": 3,
+      "storyPoints": 3,
+      "properties": {
+        "appName": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 2,
+        "numberOfCodeFiles": 2,
+        "linesTotal": 60,
+        "linesOfCode": 60,
+        "totalApiScanned": 38,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "05db6b93-a7af-45c3-aabe-b98a0c22fd74",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Configuration, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0",
+              "protected": "Microsoft.Extensions.Configuration, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0"
+            },
+            "kind": "File",
+            "path": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj",
+            "snippet": "Microsoft.Extensions.Configuration, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0",
+            "protectedSnippet": "Microsoft.Extensions.Configuration, 3.1.1\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 8.0.0",
+            "label": "Microsoft.Extensions.Configuration 3.1.1",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Configuration",
+              "PackageVersion": "3.1.1",
+              "PackageNewVersion": "8.0.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "4cd6d9e7-3874-4a74-b9ef-e99c4e30cc44",
+          "ruleId": "NuGet.0004",
+          "projectPath": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+              "protected": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0"
+            },
+            "kind": "File",
+            "path": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj",
+            "snippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "protectedSnippet": "Azure.Storage.Blobs, 12.8.0\n\nRecommendation:\n\nAzure.Storage.Blobs, 12.27.0",
+            "label": "Azure.Storage.Blobs 12.8.0",
+            "properties": {
+              "PackageId": "Azure.Storage.Blobs",
+              "PackageVersion": "12.8.0",
+              "PackageNewVersion": "12.27.0",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "92455913-db5a-4c93-bd1e-740ee9f7e965",
+          "ruleId": "Project.0002",
+          "projectPath": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net8.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net8.0"
+            },
+            "kind": "File",
+            "path": "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net8.0"
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+      "startingProject": true,
+      "issues": 6,
+      "storyPoints": 11,
+      "properties": {
+        "appName": "Microsoft.Teams.Apps.CompanyCommunicator.Send.Func",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "net6.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 6,
+        "numberOfCodeFiles": 6,
+        "linesTotal": 1236,
+        "linesOfCode": 1236,
+        "totalApiScanned": 815,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "88ade706-8517-4aea-9c77-913d73ff2966",
+          "ruleId": "AzureFunctionsUpgrade.0002",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj"
+          }
+        },
+        {
+          "incidentId": "b4c2b659-9a36-4ac2-a8f0-cb1fe0fad93f",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+              "protected": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+            "protectedSnippet": "Microsoft.Extensions.Localization, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization, and replace with new package Microsoft.Extensions.Localization 8.0.26",
+            "label": "Microsoft.Extensions.Localization 3.1.8",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Localization",
+              "PackageVersion": "3.1.8",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "574d1817-334a-4717-8cd9-58c32efebfee",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26",
+              "protected": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26",
+            "protectedSnippet": "Microsoft.Extensions.Localization.Abstractions, 3.1.8\n\nRecommendation:\n\nRemove Microsoft.Extensions.Localization.Abstractions, and replace with new package Microsoft.Extensions.Localization.Abstractions 8.0.26",
+            "label": "Microsoft.Extensions.Localization.Abstractions 3.1.8",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Localization.Abstractions",
+              "PackageVersion": "3.1.8",
+              "PackageNewVersion": "8.0.26",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "2c789bf4-c1f8-4e0d-abeb-23c2839958a2",
+          "ruleId": "NuGet.0002",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+              "protected": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+            "protectedSnippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http 3.3.0,\nMicrosoft.Azure.Functions.Worker.Sdk 1.18.1,\nMicrosoft.Azure.Functions.Worker 1.24.0",
+            "label": "Microsoft.NET.Sdk.Functions 3.0.11",
+            "properties": {
+              "PackageId": "Microsoft.NET.Sdk.Functions",
+              "PackageVersion": "3.0.11",
+              "PackageNewVersion": null,
+              "PackageReplacements": "Replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http=3.3.0;Microsoft.Azure.Functions.Worker.Sdk=1.18.1;Microsoft.Azure.Functions.Worker=1.24.0"
+            }
+          }
+        },
+        {
+          "incidentId": "8ef26e55-c9df-4cae-9971-b9a427ff40cc",
+          "ruleId": "NuGet.0001",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.10.9\n\nRecommendation:\n\nNo supported version found",
+            "label": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.10.9",
+            "properties": {
+              "PackageId": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+              "PackageVersion": "1.10.9",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "260ae2c9-3bff-4c6c-a7d4-ab50e05be25b",
+          "ruleId": "NuGet.0005",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+              "protected": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+            "protectedSnippet": "Microsoft.NET.Sdk.Functions, 3.0.11\n\nRecommendation:\n\nShould be replaced.\nRemove Microsoft.NET.Sdk.Functions, and replace with new package Microsoft.NET.Sdk.Functions, 4.6.0",
+            "label": "Microsoft.NET.Sdk.Functions 3.0.11",
+            "properties": {
+              "PackageId": "Microsoft.NET.Sdk.Functions",
+              "PackageVersion": "3.0.11",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "ea5bacd2-6fd7-4dca-a418-e1cc08526834",
+          "ruleId": "Project.0002",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net6.0\nRecommended target framework: net8.0",
+              "protected": "Current target framework: net6.0\nRecommended target framework: net8.0"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "protectedSnippet": "Current target framework: net6.0\nRecommended target framework: net8.0",
+            "properties": {
+              "CurrentTargetFramework": "net6.0",
+              "RecommendedTargetFramework": "net8.0"
+            }
+          }
+        },
+        {
+          "incidentId": "39ce8d8b-f5c5-4f48-8364-2d0471970ff2",
+          "ruleId": "NuGet.0003",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Azure.WebJobs.Extensions.ServiceBus, 3.0.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Azure.WebJobs.Extensions.ServiceBus 3.0.3",
+            "properties": {
+              "PackageId": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+              "PackageVersion": "3.0.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "4d166a18-febc-4d41-9aa0-a482abbc84fb",
+          "ruleId": "NuGet.0003",
+          "projectPath": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj",
+            "snippet": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Azure.WebJobs.Host.Storage, 3.0.14\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Azure.WebJobs.Host.Storage 3.0.14",
+            "properties": {
+              "PackageId": "Microsoft.Azure.WebJobs.Host.Storage",
+              "PackageVersion": "3.0.14",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0004": {
+      "id": "NuGet.0004",
+      "isFeature": false,
+      "description": "NuGet package contains security vulnerabilities.\n\nPackage needs to be upgraded to a newer version that addresses known security vulnerabilities.",
+      "label": "NuGet package contains security vulnerability",
+      "severity": "Optional",
+      "effort": 1
+    },
+    "NuGet.0005": {
+      "id": "NuGet.0005",
+      "isFeature": false,
+      "description": "NuGet package is deprecated.\n\nGo to its documentation and if there is a guidance for replacement of functionality provided by this package.",
+      "label": "NuGet package is deprecated",
+      "severity": "Optional",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262531",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0001": {
+      "id": "Api.0001",
+      "isFeature": false,
+      "description": "API is binary incompatible for selected .NET version: affects existing binaries, often requiring recompilation, because the API has changed in a way that prevents older binaries from loading or executing.",
+      "label": "Binary incompatible for selected .NET version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0001": {
+      "id": "NuGet.0001",
+      "isFeature": false,
+      "description": "NuGet package is incompatible with selected target framework.\n\nPackage needs to be upgraded to a version supporting selected project target framework. If there no new package versions supporting new target framework, different package needs to be used and all code needs to be upgraded to new API.",
+      "label": "NuGet package is incompatible",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262529",
+          "isCustom": false
+        }
+      ]
+    },
+    "IdentityModel": {
+      "id": "IdentityModel",
+      "isFeature": false,
+      "description": "Windows Identity Foundation (WIF), SAML, and claims-based authentication APIs that have been replaced by modern identity libraries. WIF was the original identity framework for .NET Framework. Migrate to Microsoft.IdentityModel.* packages (modern identity stack).",
+      "label": "IdentityModel \u0026 Claims-based Security",
+      "severity": "Mandatory",
+      "effort": 4,
+      "links": [
+        {
+          "title": "Microsoft.IdentityModel packages",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341614",
+          "isCustom": false
+        }
+      ]
+    },
+    "AzureFunctionsUpgrade.0002": {
+      "id": "AzureFunctionsUpgrade.0002",
+      "isFeature": true,
+      "description": "When migrating from in-proc to isolated, enable the use of the V2 model for Azure Functions projects and enable Application Insights.",
+      "label": "Enable the use of the V2 model for Azure Functions projects and enable Application Insights.",
+      "severity": "Mandatory",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2342114",
+          "isCustom": false
+        },
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341915",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0003": {
+      "id": "NuGet.0003",
+      "isFeature": false,
+      "description": "NuGet package functionality is included with framework reference.\n\nPackage needs to be removed.",
+      "label": "NuGet package functionality is included with framework reference",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262609",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}

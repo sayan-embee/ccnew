@@ -1,0 +1,12 @@
+{
+  "scenarioId": "Azure-Functions-Version",
+  "operationId": "023fe91d-3ce7-445c-8881-be8e4fd5beb8",
+  "description": "Upgrade Azure Functions project from in-proc model to isolated",
+  "startTime": "2026-05-07T06:10:12.6549464Z",
+  "lastUpdateTime": "2026-05-07T06:10:20.8657873Z",
+  "stage": "Assessment",
+  "properties": {
+    "UpgradeTargetFramework": "net8.0"
+  },
+  "folderPath": ""
+}

@@ -1,0 +1,384 @@
+{
+  "reportConfigHash": "00c47eb9",
+  "createdAtUtc": "2026-05-07T06:10:35.280876Z",
+  "entries": [
+    {
+      "packageName": "AdaptiveCards",
+      "packageVersion": "1.0.6",
+      "insightsName": "AdaptiveCards",
+      "insightsCurrentVersion": "1.0.6",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Azure.Storage.Blobs",
+      "packageVersion": "12.8.0",
+      "insightsName": "Azure.Storage.Blobs",
+      "insightsCurrentVersion": "12.8.0",
+      "insightsNewVersion": "12.27.0",
+      "insightsDescription": "NuGet package contains security vulnerability",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj",
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+        "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+        "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Azure.Cosmos.Table",
+      "packageVersion": "1.0.1",
+      "insightsName": "Microsoft.Azure.Cosmos.Table",
+      "insightsCurrentVersion": "1.0.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package is deprecated",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Azure.ServiceBus",
+      "packageVersion": "4.1.1",
+      "insightsName": "Microsoft.Azure.ServiceBus",
+      "insightsCurrentVersion": "4.1.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package is deprecated",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Bot.Builder.Integration.AspNet.Core",
+      "packageVersion": "4.12.1",
+      "insightsName": "Microsoft.Bot.Builder.Integration.AspNet.Core",
+      "insightsCurrentVersion": "4.12.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.Extensions.Configuration",
+      "packageVersion": "2.1.1",
+      "insightsName": "Microsoft.Extensions.Configuration",
+      "insightsCurrentVersion": "2.1.1",
+      "insightsNewVersion": "8.0.0",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Graph",
+      "packageVersion": "3.22.0",
+      "insightsName": "Microsoft.Graph",
+      "insightsCurrentVersion": "3.22.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.Identity.Client",
+      "packageVersion": "4.15.0",
+      "insightsName": "Microsoft.Identity.Client",
+      "insightsCurrentVersion": "4.15.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package is deprecated",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "CompanyCommunicator.Common\\Microsoft.Teams.Apps.CompanyCommunicator.Common.csproj"
+      ]
+    },
+    {
+      "packageName": "Polly",
+      "packageVersion": "7.2.1",
+      "insightsName": "Polly",
+      "insightsCurrentVersion": "7.2.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Polly.Contrib.WaitAndRetry",
+      "packageVersion": "1.1.1",
+      "insightsName": "Polly.Contrib.WaitAndRetry",
+      "insightsCurrentVersion": "1.1.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "StyleCop.Analyzers",
+      "packageVersion": "1.1.118",
+      "insightsName": "StyleCop.Analyzers",
+      "insightsCurrentVersion": "1.1.118",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "System.Linq.Async",
+      "packageVersion": "4.1.1",
+      "insightsName": "System.Linq.Async",
+      "insightsCurrentVersion": "4.1.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.ApplicationInsights.AspNetCore",
+      "packageVersion": "2.17.0",
+      "insightsName": "Microsoft.ApplicationInsights.AspNetCore",
+      "insightsCurrentVersion": "2.17.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package is deprecated",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.AspNetCore.Authentication.JwtBearer",
+      "packageVersion": "3.1.4",
+      "insightsName": "Microsoft.AspNetCore.Authentication.JwtBearer",
+      "insightsCurrentVersion": "3.1.4",
+      "insightsNewVersion": "8.0.26",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.AspNetCore.Authentication.OpenIdConnect",
+      "packageVersion": "3.1.4",
+      "insightsName": "Microsoft.AspNetCore.Authentication.OpenIdConnect",
+      "insightsCurrentVersion": "3.1.4",
+      "insightsNewVersion": "8.0.26",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.AspNetCore.SpaServices.Extensions",
+      "packageVersion": "3.1.1",
+      "insightsName": "Microsoft.AspNetCore.SpaServices.Extensions",
+      "insightsCurrentVersion": "3.1.1",
+      "insightsNewVersion": "8.0.26",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Azure.Storage.Blob",
+      "packageVersion": "11.2.3",
+      "insightsName": "Microsoft.Azure.Storage.Blob",
+      "insightsCurrentVersion": "11.2.3",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package is deprecated",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.AspNetCore.Authentication.AzureAD.UI",
+      "packageVersion": "3.1.1",
+      "insightsName": "Microsoft.AspNetCore.Authentication.AzureAD.UI",
+      "insightsCurrentVersion": "3.1.1",
+      "insightsNewVersion": "",
+      "insightsDescription": "Needs to be replaced with Replace with new package Microsoft.Identity.Web=4.9.0",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Graph.Core",
+      "packageVersion": "1.24.0",
+      "insightsName": "Microsoft.Graph.Core",
+      "insightsCurrentVersion": "1.24.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.Identity.Web",
+      "packageVersion": "0.1.3-preview",
+      "insightsName": "Microsoft.Identity.Web",
+      "insightsCurrentVersion": "0.1.3-preview",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+      "packageVersion": "1.10.9",
+      "insightsName": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+      "insightsCurrentVersion": "1.10.9",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package is incompatible",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj",
+        "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+        "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+      "packageVersion": "3.1.5",
+      "insightsName": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+      "insightsCurrentVersion": "3.1.5",
+      "insightsNewVersion": "8.0.23",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator\\Microsoft.Teams.Apps.CompanyCommunicator.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Azure.Functions.Extensions",
+      "packageVersion": "1.1.0",
+      "insightsName": "Microsoft.Azure.Functions.Extensions",
+      "insightsCurrentVersion": "1.1.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+      "packageVersion": "3.0.3",
+      "insightsName": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+      "insightsCurrentVersion": "3.0.3",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package functionality is included with framework reference",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+        "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Azure.WebJobs.Host.Storage",
+      "packageVersion": "3.0.14",
+      "insightsName": "Microsoft.Azure.WebJobs.Host.Storage",
+      "insightsCurrentVersion": "3.0.14",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package functionality is included with framework reference",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+        "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Extensions.Localization",
+      "packageVersion": "3.1.8",
+      "insightsName": "Microsoft.Extensions.Localization",
+      "insightsCurrentVersion": "3.1.8",
+      "insightsNewVersion": "8.0.26",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+        "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Extensions.Localization.Abstractions",
+      "packageVersion": "3.1.8",
+      "insightsName": "Microsoft.Extensions.Localization.Abstractions",
+      "insightsCurrentVersion": "3.1.8",
+      "insightsNewVersion": "8.0.26",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+        "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.NET.Sdk.Functions",
+      "packageVersion": "3.0.11",
+      "insightsName": "Microsoft.NET.Sdk.Functions",
+      "insightsCurrentVersion": "3.0.11",
+      "insightsNewVersion": "",
+      "insightsDescription": "Needs to be replaced with Replace with new package Microsoft.Azure.Functions.Worker.Extensions.Http=3.3.0;Microsoft.Azure.Functions.Worker.Sdk=1.18.1;Microsoft.Azure.Functions.Worker=1.24.0",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Data.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Data.Func.csproj",
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj",
+        "CompanyCommunicator.Send.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Send.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "CsvHelper",
+      "packageVersion": "15.0.5",
+      "insightsName": "CsvHelper",
+      "insightsCurrentVersion": "15.0.5",
+      "insightsNewVersion": "",
+      "insightsDescription": "",
+      "insightsIsCompatible": true,
+      "insightsProjects": []
+    },
+    {
+      "packageName": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
+      "packageVersion": "2.3.0",
+      "insightsName": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
+      "insightsCurrentVersion": "2.3.0",
+      "insightsNewVersion": "",
+      "insightsDescription": "NuGet package functionality is included with framework reference",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Extensions.Logging",
+      "packageVersion": "3.1.0",
+      "insightsName": "Microsoft.Extensions.Logging",
+      "insightsCurrentVersion": "3.1.0",
+      "insightsNewVersion": "8.0.1",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "CompanyCommunicator.Prep.Func\\Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.csproj"
+      ]
+    },
+    {
+      "packageName": "Microsoft.Extensions.Configuration",
+      "packageVersion": "3.1.1",
+      "insightsName": "Microsoft.Extensions.Configuration",
+      "insightsCurrentVersion": "3.1.1",
+      "insightsNewVersion": "8.0.0",
+      "insightsDescription": "NuGet package upgrade is recommended",
+      "insightsIsCompatible": true,
+      "insightsProjects": [
+        "Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob\\Microsoft.Teams.Apps.CompanyCommunicator.PrivateBlob.csproj"
+      ]
+    }
+  ]
+}
